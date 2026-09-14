@@ -1,0 +1,40 @@
+.transparent {
+  background-color: transparent;
+  outline: none;
+  color: #ffffff;
+  text-decoration: none;
+  border: 1px solid gray;
+}
+
+.more-options {
+  cursor: pointer;
+  margin-right: 1.5rem;
+}
+
+.back-circle {
+  border-radius: 50%;
+  padding: 12px;
+  margin-right: 10px;
+  margin-left: 10px;
+  cursor: pointer;
+  color: var(--view-mode-color);
+}
+
+#nav.dark .back-circle:hover,
+#nav.dark .create:hover {
+  background: rgba(47, 47, 47, 0.8);
+}
+
+#nav.white .back-circle:hover,
+#nav.white .create:hover {
+  background: rgba(47, 47, 47, 0.1);
+}
+
+.option-subs .img-width {
+  width: 30px;
+  height: 30px;
+}
+
+.option-subs > div:last-child {
+  align-self: center;
+}

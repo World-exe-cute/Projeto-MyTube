@@ -1,0 +1,17 @@
+.circle_buttons {
+  background: #2c2c2c;
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 25px;
+  display: flex;
+  width: max-content;
+}
+
+.circle_buttons.blur {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.circle_buttons.light {
+  background-color: white;
+  color: black;
+}

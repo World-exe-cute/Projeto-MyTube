@@ -1,0 +1,18 @@
+#channel-posts .statistics {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+}
+
+#channel-posts .statistics.title {
+  font-size: 1.5rem;
+  height: 40px;
+}
+
+#channel-posts .statistics > div {
+  padding: 0rem 0.5rem;
+  width: 150px;
+}
+
+#channel-posts .statistics > div:not(:first-child) {
+  height: calc(2rem + 78px);
+}

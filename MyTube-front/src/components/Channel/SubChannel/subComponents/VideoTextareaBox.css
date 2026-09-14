@@ -1,0 +1,25 @@
+.video-textarea {
+  border: 1px solid #6b6b6b;
+  padding: 1rem;
+  padding-top: 0;
+  border-radius: 10px;
+}
+
+.video-textarea h2 {
+  font-size: 1.3rem;
+  color: #979797;
+}
+
+.video-textarea textarea {
+  all: unset;
+  width: 100%;
+  resize: none;
+  overflow-wrap: break-word;
+  height: 70px;
+}
+
+.video-textarea .count-box {
+  font-size: 1.3rem;
+  color: #979797;
+  justify-self: end;
+}

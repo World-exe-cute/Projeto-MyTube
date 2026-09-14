@@ -1,0 +1,166 @@
+#option-bar {
+  position: absolute;
+  z-index: 8;
+  font-size: 1.7rem;
+  border-radius: 10px;
+  display: none;
+}
+
+#option-bar .user-bar > div:first-child {
+  margin-top: 2rem;
+  margin-left: 1rem;
+}
+
+#nav.white #option-bar,
+#nav.white #option-bar > div > .options,
+#nav.white #option-bar > .restricted > button,
+#nav.white #option-bar > .view-box > button,
+#nav.white #option-bar > div > .reset-config {
+  background: white;
+}
+
+#nav.white.line-channel #option-bar,
+#nav.white.line-channel #option-bar > div > .options,
+#nav.white.line-channel #option-bar > .restricted > button,
+#nav.white.line-channel #option-bar > .view-box > button,
+#nav.white.line-channel #option-bar > div > .reset-config {
+  background: rgb(110, 110, 110);
+}
+
+#nav.dark #option-bar,
+#nav.dark #option-bar > div > .options,
+#nav.dark #option-bar > .restricted > button,
+#nav.dark #option-bar > .view-box > button,
+#nav.dark #option-bar > div > .reset-config {
+  background: #282828;
+}
+
+#nav.dark.line-channel #option-bar,
+#nav.dark.line-channel #option-bar > div > .options,
+#nav.dark.line-channel #option-bar > .restricted > button,
+#nav.dark.line-channel #option-bar > .view-box > button,
+#nav.dark.line-channel #option-bar > div > .reset-config {
+  background: #1d1d1d;
+}
+
+#option-bar.active {
+  display: block;
+}
+
+#option-bar > .view-box > button,
+#option-bar > .restricted > button {
+  all: unset;
+  cursor: pointer;
+  width: stretch;
+}
+
+#option-bar > .view-box > p,
+#option-bar > .restricted > p {
+  display: flex;
+  padding: 0.5rem 1rem;
+  margin-bottom: 10px;
+  padding: 1rem;
+  cursor: default;
+}
+
+#option-bar > div > .options,
+#option-bar > .restricted > button,
+#option-bar > .view-box > button,
+#option-bar > div > .reset-config {
+  display: flex;
+  padding: 0.5rem 1rem;
+  margin-bottom: 10px;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+#nav.white #option-bar > div > .options,
+#nav.white #option-bar > .restricted > button,
+#nav.white #option-bar > .view-box > button,
+#nav.white #option-bar > div > .reset-config {
+  background: white;
+}
+
+#nav.white #option-bar > div > div:hover,
+#nav.white #option-bar > .restricted > button:hover,
+#nav.white #option-bar > .view-box > button:hover,
+#nav.white #option-bar > div > .reset-config:hover {
+  background: #e2e2e2;
+}
+
+#nav.dark #option-bar > div > .options,
+#nav.dark #option-bar > .restricted > button,
+#nav.dark #option-bar > .view-box > button,
+#nav.dark #option-bar > div > .reset-config {
+  background: #282828;
+}
+
+#nav.dark #option-bar > div > div:hover,
+#nav.dark #option-bar > .restricted > button:hover,
+#nav.dark #option-bar > .view-box > button:hover,
+#nav.dark #option-bar > div > .reset-config:hover {
+  background: #3e3e3e;
+}
+
+#option-bar > div > div:first-child,
+#option-bar > div > .reset-config:first-child {
+  margin-top: 12px;
+}
+
+#option-bar > div > div:last-child,
+#option-bar > div > .reset-config:last-child {
+  margin-bottom: 12px;
+}
+
+#option-bar > div > div > *,
+#option-bar > .restricted > button,
+#option-bar > .view-box > button,
+#option-bar > div > .reset-config > * {
+  display: flex;
+  padding-right: 10px;
+}
+
+.option-bar-title {
+  margin-bottom: 25px;
+}
+
+.option-bar-title i {
+  justify-content: flex-start;
+}
+
+#option-bar-click {
+  justify-content: end;
+}
+
+#option-bar .user-bar {
+  display: flex;
+}
+
+#option-bar .user-bar > img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  align-self: center;
+  margin: 0rem 1rem;
+  background: var(--view-mode);
+}
+
+#option-bar .user-bar > .img-width {
+  width: 50px;
+  height: 50px;
+  align-self: center;
+  margin: 0rem 1rem;
+}
+
+#option-bar .user-bar > div:first-child {
+  align-items: center;
+}
+
+#option-bar .user-bar > div:last-child {
+  display: block;
+}
+
+#option-bar .user-bar > div > div,
+#option-bar .user-bar > div > h2 {
+  margin-bottom: 5px;
+}

@@ -1,0 +1,7 @@
+#load-bar {
+  border: 1px solid red;
+  width: 0%;
+  visibility: hidden;
+  background: black;
+  transition: 0.2s;
+}

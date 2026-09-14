@@ -1,0 +1,54 @@
+.input-auth .error {
+  border-color: #f2b8b5 !important;
+}
+
+#row .input-auth .input-name {
+  background: #0f0f0f;
+  display: inline-block;
+  position: relative;
+  font-size: 2rem;
+  top: 4rem;
+  left: 2rem;
+  z-index: 5;
+  transition: 0.2s;
+}
+
+.input-auth .focus,
+.input-auth .input-name:focus {
+  font-size: 1.5rem !important;
+  top: 1.5rem !important;
+  transition: 0.2s;
+}
+
+.input-auth .input-name p {
+  all: unset;
+}
+
+.input-auth ul {
+  position: absolute;
+  background: #0f0f0f;
+  margin: 3.5rem 0.5rem;
+  padding: 0.5rem;
+  color: #ffffff;
+  border: 1px solid rgb(168, 199, 250);
+  border-top: 0;
+  font-size: 2rem;
+  list-style: none;
+  z-index: 5;
+}
+
+.input-auth ul li {
+  margin: 1rem 0.5rem;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.input-auth > div > div:last-child {
+  display: flex;
+}
+
+.input-auth .hidden-pass {
+  font-size: 1.8rem;
+  align-self: center;
+  margin-left: 1rem;
+}

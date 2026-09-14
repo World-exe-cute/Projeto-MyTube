@@ -1,0 +1,66 @@
+.poll-box {
+  margin-left: 5rem;
+}
+
+.poll-box > div:first-child {
+  font-size: 1.5rem;
+}
+
+.poll-box > .poll {
+  display: flex;
+  margin: 1rem 0;
+  cursor: pointer;
+}
+
+.poll-box .check {
+  width: 15px;
+  height: 15px;
+  border: 1px solid var(--view-mode-color);
+  border-radius: 50%;
+  margin-right: 1rem;
+  align-self: center;
+}
+
+.poll-box > .poll.view .poll-line,
+.poll-box > .poll.view .check {
+  border: 2px solid rgb(30, 134, 253);
+}
+
+.poll-box > .poll > .poll-line {
+  border: 1px solid var(--view-mode-color);
+  padding: 0.5rem;
+  font-size: 1.7rem;
+  width: 90%;
+  border-radius: 5px;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.poll-box > .poll > .poll-line > div {
+  z-index: 3;
+}
+
+.poll-box > .poll > .poll-line .collor-bar {
+  content: "";
+  position: absolute;
+  background: rgb(51, 143, 248);
+  width: 100%;
+  height: 100%;
+  left: 100%;
+  top: 0;
+  border-radius: 5px;
+}
+
+.poll-box > .poll > .poll-line.check {
+  color: blue;
+}
+
+.poll-box > .poll > .poll-line > .percent {
+  margin-left: auto;
+  visibility: hidden;
+}
+
+.poll-box > .poll > .poll-line > .percent.view {
+  visibility: visible;
+}

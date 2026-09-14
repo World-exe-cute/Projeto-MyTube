@@ -1,0 +1,53 @@
+.cropper-error {
+  max-width: 480px;
+  min-width: 480px;
+  max-height: 180px;
+  position: fixed;
+  z-index: 20;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  background: #282828;
+  border-radius: 25px;
+}
+
+.cropper-error h2 {
+  margin: 3rem 3rem 1rem 3rem;
+  font-size: 2rem;
+}
+
+.cropper-error div:not(:last-child) {
+  display: flex;
+  align-items: center;
+  margin: 0rem 2rem;
+  font-size: 1.6rem;
+}
+
+.cropper-error div:not(:last-child) > i {
+  margin-right: 1rem;
+  font-size: 1.9rem;
+}
+
+.cropper-error div:last-child {
+  justify-self: end;
+  align-self: self-end;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+}
+
+.cropper-error div:last-child > button {
+  margin: 0rem 0.5rem;
+  border: 1px solid gray;
+  border-radius: 15px;
+  padding: 0.5rem 1rem;
+  background: rgb(209, 208, 208);
+  cursor: pointer;
+}
+
+.cropper-section.show,
+.cropper-error.show {
+  display: grid;
+  grid-template-rows: 1fr 1fr 15fr 1fr;
+}

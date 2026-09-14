@@ -1,0 +1,23 @@
+.options-button > div,
+.options-button button,
+.options-button a {
+  margin-right: 4rem;
+  padding: 1rem 2rem;
+  color: rgb(168, 199, 250);
+  cursor: pointer;
+}
+
+.options-button a:hover {
+  background: rgba(138, 180, 248, 0.1);
+  border-radius: 3rem;
+}
+
+.active-a {
+  background: rgba(255, 255, 255, 1);
+  border-radius: 3rem;
+  color: rgb(14, 103, 245) !important;
+}
+
+.active-a:hover {
+  background: rgb(194, 186, 241);
+}

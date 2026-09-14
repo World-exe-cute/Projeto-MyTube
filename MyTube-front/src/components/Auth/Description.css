@@ -1,0 +1,21 @@
+.center-background {
+  z-index: 4;
+  background: #0f0f0f;
+  padding-left: 2rem;
+  border-radius: 2rem;
+  margin-right: 1rem;
+  margin-top: 5rem;
+}
+
+.center-background > p {
+  all: unset;
+  font-size: 1.4rem;
+}
+
+.center-background > h2 {
+  white-space: normal;
+  overflow-wrap: break-word;
+  font-size: calc((var(--vw) * 2) + (1rem));
+  margin-bottom: 5rem;
+  margin-top: 10rem;
+}

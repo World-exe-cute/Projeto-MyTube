@@ -1,0 +1,20 @@
+.logo-color {
+  color: red;
+  background: radial-gradient(white, var(--view-mode), var(--view-mode));
+}
+
+.logo-channel {
+  color: red;
+  background: radial-gradient(white, #282828, #282828);
+}
+
+.reset-channel {
+  background-color: #282828 !important;
+  outline: none;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.logo {
+  display: none;
+}

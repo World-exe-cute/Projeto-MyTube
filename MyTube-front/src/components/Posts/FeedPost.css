@@ -1,0 +1,9 @@
+.post-component {
+  border: 1px solid gray;
+  border-radius: 15px;
+  width: 80%;
+  margin: 1rem 5rem;
+  padding: 1rem;
+  max-width: 500px;
+  margin-bottom: 3rem;
+}

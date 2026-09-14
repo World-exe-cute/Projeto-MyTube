@@ -1,0 +1,46 @@
+#user-post .poll-container {
+  border: 1px solid red;
+}
+
+#user-post .poll-container > div {
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+  font-size: 1.7rem;
+  position: relative;
+}
+
+#user-post .poll-container .line-box > input {
+  all: unset;
+  margin-left: 1rem;
+  border-bottom: 1px solid gray;
+  width: 90%;
+}
+
+#user-post .poll-container .line-box::before {
+  content: "";
+  border-bottom: 1px solid gray;
+  position: absolute;
+  width: 0rem;
+  top: 2rem;
+  right: 26rem;
+  transition: 0.5s;
+}
+
+#user-post .poll-container .line-box:focus-within::before {
+  border-bottom: 2px solid gray;
+  width: 44.5rem;
+  right: 3rem;
+  transition: 0.5s;
+}
+
+#user-post .poll-container > div > div:last-child {
+  justify-self: end;
+  margin-right: 3rem;
+  margin-top: 1rem;
+}
+
+#user-post .poll-container button {
+  font-size: 1.5rem;
+  color: rgb(72, 182, 255);
+  cursor: pointer;
+}

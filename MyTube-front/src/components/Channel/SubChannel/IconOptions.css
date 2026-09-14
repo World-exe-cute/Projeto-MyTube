@@ -1,0 +1,20 @@
+#icon-options {
+  color: #ffffff;
+  cursor: pointer;
+}
+
+#icon-options.check i {
+  margin-right: 1rem;
+}
+
+#icon-options:hover .hidden {
+  visibility: visible;
+  color: white;
+  background: #3e3e3e;
+  transition: 0.3s;
+  width: max-content;
+}
+
+#icon-options:hover {
+  background: #1f1f1f;
+}

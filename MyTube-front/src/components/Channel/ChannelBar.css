@@ -1,0 +1,103 @@
+#ChannelBar {
+  border-right: 1px solid rgb(73, 73, 73);
+  padding: 1rem;
+}
+
+#ChannelBar > div {
+  height: max-content;
+  position: sticky;
+  top: 84px;
+  left: 0;
+}
+
+#ChannelBar > div > a:first-child > div:first-child {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin: 0 1rem;
+}
+
+#ChannelBar > div > a:not(:first-child) {
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  padding: 1.4rem;
+  border-radius: 10px;
+}
+
+#ChannelBar > div a {
+  text-decoration: none;
+  color: white;
+}
+
+#ChannelBar .hidden,
+#ChannelBar p {
+  position: absolute;
+  color: transparent;
+  background: transparent;
+  padding: 0.5rem;
+  border-radius: 20px;
+  font-size: 1.5rem;
+  margin-top: 5rem;
+}
+
+#ChannelBar p {
+  visibility: hidden;
+  margin-top: 1rem;
+}
+
+#ChannelBar > div > a:first-child:hover > p {
+  visibility: visible;
+  color: white;
+  background: #3e3e3e;
+  left: 0;
+  transition: 0.3s;
+}
+
+#ChannelBar > div > .account.active img {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin: 1rem;
+}
+
+#ChannelBar > div > .account.active .photo-box {
+  background: orange;
+  width: 35px;
+  height: 35px;
+
+  display: flex;
+  align-self: center;
+  justify-self: center;
+  border-radius: 50%;
+  margin: 1rem 1rem;
+}
+
+#ChannelBar > div > .account.active .title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  justify-self: center;
+  margin-bottom: 0.5rem;
+}
+
+#ChannelBar > div > .account.active .user-name {
+  font-size: 1.3rem;
+  justify-self: center;
+  margin-bottom: 1rem;
+}
+
+#ChannelBar > div > .account > img {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin: 1rem 1rem;
+}

@@ -1,0 +1,18 @@
+#channel-videos .statistics {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+}
+
+#channel-videos .statistics.title {
+  font-size: 1.5rem;
+  height: 40px;
+}
+
+#channel-videos .statistics > div {
+  padding: 0rem 0.5rem;
+  width: 150px;
+}
+
+#channel-videos .statistics > div:not(:first-child) {
+  height: calc(2rem + 78px);
+}

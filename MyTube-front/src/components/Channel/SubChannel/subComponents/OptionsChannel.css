@@ -1,0 +1,100 @@
+#options-channel {
+  overflow-y: auto;
+  height: calc(var(--vh) * 100);
+  white-space: nowrap;
+  z-index: -1;
+  border-right: 1px solid rgb(73, 73, 73);
+  padding: 1rem;
+}
+
+#options-channel::-webkit-scrollbar {
+  background: rgba(255, 255, 255, 0);
+  width: 3px;
+  height: 30%;
+}
+
+#options-channel::-webkit-scrollbar-thumb {
+  background: white;
+  border-radius: 10px;
+}
+
+#options-channel > .account.active img {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin: 1rem;
+}
+
+#options-channel > .account.active .photo-box {
+  background: orange;
+  width: 80px;
+  height: 80px;
+  border: 1px solid white;
+  display: flex;
+  align-self: center;
+  justify-self: center;
+  border-radius: 50%;
+  margin: 1rem 1rem;
+}
+
+#options-channel > .account.active .title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  justify-self: center;
+  margin-bottom: 0.5rem;
+}
+
+#options-channel > .account.active .user-name {
+  font-size: 1.3rem;
+  justify-self: center;
+  margin-bottom: 1rem;
+}
+
+#options-channel > .account > img {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin: 1rem 1rem;
+}
+
+#options-channel > a:not(.account) {
+  font-size: 20px;
+  display: flex;
+  justify-content: flex-start;
+  padding: 1.4rem;
+  border-radius: 10px;
+}
+
+#options-channel a {
+  text-decoration: none;
+}
+
+#options-channel .hidden,
+#options-channel p {
+  position: absolute;
+  color: transparent;
+  background: transparent;
+  padding: 0.5rem;
+  border-radius: 20px;
+  font-size: 1.5rem;
+  margin-top: 5rem;
+}
+
+#options-channel p {
+  visibility: hidden;
+  margin-top: 1rem;
+}
+
+#options-channel > a:first-child:hover > p {
+  visibility: visible;
+  color: white;
+  background: #3e3e3e;
+  left: 0;
+  transition: 0.3s;
+}

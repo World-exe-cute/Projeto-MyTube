@@ -1,0 +1,83 @@
+.buttonCommunity {
+  font-size: 1.4rem;
+  display: flex;
+  margin-left: 1rem;
+  padding: 1rem;
+  border: 1px solid gray;
+  border-radius: 10px;
+  color: white;
+  background: #2c2c2c;
+}
+
+.buttonCommunity .box-hidden {
+  position: absolute;
+  background: #1f1f1f;
+  border-radius: 10px;
+  margin-left: -11px;
+  margin-top: -11px;
+  padding: 0rem 1rem;
+  display: none;
+}
+
+.buttonCommunity .box-hidden.show {
+  display: block !important;
+}
+
+.buttonCommunity .box-hidden > div:last-child {
+  border-top: 1px solid gray;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: end;
+}
+
+.buttonCommunity .box-hidden > div:last-child > div {
+  width: max-content;
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  background: #2c2c2c;
+  color: white;
+}
+
+.buttonCommunity .box-hidden > div:first-child {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid gray;
+}
+
+.buttonCommunity .box-hidden > div:first-child > i {
+  margin-left: auto;
+  padding-left: 1rem;
+}
+
+.buttonCommunity .box-hidden > .mid-box > div {
+  display: flex;
+  align-items: center;
+}
+
+.buttonCommunity .box-hidden > .mid-box .circle-box {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid gray;
+  margin-right: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonCommunity .box-hidden > .mid-box .circle-box.active {
+  border: 2px solid white;
+}
+
+.buttonCommunity .box-hidden > .mid-box .circle-box > div {
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0);
+  border-radius: 50%;
+}
+
+.buttonCommunity .box-hidden > .mid-box .circle-box > div.active {
+  background: rgba(255, 255, 255, 1);
+}

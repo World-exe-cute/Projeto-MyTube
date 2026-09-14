@@ -1,0 +1,72 @@
+#channel-posts .user-video .info-box {
+  margin-left: 1rem;
+}
+
+#channel-posts .user-video .post-container {
+  display: flex;
+}
+
+#channel-posts .user-video .thumb-box.image {
+  position: relative;
+  margin-bottom: 1rem;
+  height: 8rem;
+  width: 88px;
+  cursor: pointer;
+}
+
+#channel-posts .user-video .thumb-box.text {
+  position: relative;
+  margin-bottom: 1rem;
+  height: 8rem;
+  align-content: center;
+  justify-content: center;
+  width: 88px;
+  display: flex;
+  cursor: pointer;
+}
+
+#channel-posts .user-video .thumb-box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+  border-radius: 10px;
+  padding: 3rem 5rem;
+  left: -9px;
+  z-index: 3;
+}
+
+#channel-posts .user-video .post-container .thumb-box i {
+  font-size: 3rem;
+  align-self: center;
+  justify-self: center;
+  position: relative;
+  left: -0.5rem;
+}
+
+#channel-posts .post-box:hover {
+  cursor: pointer;
+  background: rgba(47, 47, 47, 0.5);
+}
+
+#channel-posts .user-video .info-box > h2 {
+  all: unset;
+  font-size: 1.6rem;
+  max-width: var(--info-box-title-width);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  justify-self: center;
+}
+
+#channel-posts .user-video .info-box {
+  display: grid;
+  grid-template-rows: 1fr 3fr;
+}
+
+#channel-posts .user-video .info-box > textarea {
+  all: unset;
+  overflow: hidden;
+}

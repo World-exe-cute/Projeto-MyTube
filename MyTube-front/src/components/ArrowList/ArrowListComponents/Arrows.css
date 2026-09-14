@@ -1,0 +1,53 @@
+#arrow-left,
+#arrow-right {
+  padding: 15px 20px 15px 20px;
+  align-self: center;
+  z-index: 1;
+}
+
+main.dark #arrow-right {
+  background: linear-gradient(to left, #0f0f0f, #0f0f0f, rgba(15, 15, 15, 0.5));
+}
+
+main.dark #arrow-left {
+  background: linear-gradient(
+    to right,
+    #0f0f0f,
+    #0f0f0f,
+    rgba(15, 15, 15, 0.5)
+  );
+}
+
+main.white #arrow-right {
+  background: linear-gradient(
+    to left,
+    #6e6e6e,
+    #d4d4d4,
+    rgba(197, 197, 197, 0.1)
+  );
+}
+
+main.white #arrow-left {
+  background: linear-gradient(
+    to right,
+    #d4d4d4,
+    #d4d4d4,
+    rgba(197, 197, 197, 0.1)
+  );
+}
+
+#arrow-left {
+  position: relative;
+  left: 0rem;
+  transition: 0.5s;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+#arrow-right {
+  position: absolute;
+  right: 0;
+  background: linear-gradient(to left, #0f0f0f, #0f0f0f, rgba(15, 15, 15, 0.5));
+}

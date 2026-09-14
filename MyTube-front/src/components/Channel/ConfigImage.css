@@ -1,0 +1,244 @@
+#config-image {
+  color: white;
+}
+
+#config-image > h2 {
+  font-size: 2rem;
+  margin: 1rem 2rem 0.5rem 2rem;
+}
+
+#config-image > p {
+  font-size: 1.5rem;
+  margin: 0rem 2rem;
+  color: rgb(141, 141, 141);
+}
+
+#config-image > div:last-child {
+  display: flex;
+}
+
+#config-image > div:last-child > .config-box {
+  width: 50%;
+}
+
+#config-image .cropper-section {
+  min-width: 960px;
+  max-width: 960px;
+  max-height: 789px;
+  position: fixed;
+  z-index: 20;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  background: #282828;
+  border-radius: 25px;
+}
+
+#config-image .cropper-section.show {
+  display: grid;
+  grid-template-rows: 1fr 1fr 15fr 1fr;
+}
+
+#config-image .cropper-section > .cropper-atention {
+  display: flex;
+  align-items: center;
+}
+
+#config-image .cropper-section > .cropper-atention > i {
+  margin: 1rem;
+}
+
+#config-image .cropper-section > .cropper-atention > p {
+  font-size: 1.2rem;
+}
+
+#config-image .cropper-section .crop-banner {
+  position: relative;
+  display: grid;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#config-image .cropper-section .box-button {
+  justify-self: end;
+  align-self: center;
+  margin: 1rem;
+}
+
+#config-image .cropper-section .box-button button {
+  margin: 1rem;
+}
+
+#config-image h3 {
+  font-size: 1.8rem;
+  margin: 0;
+  padding: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#config-image > div:last-child .submit-box {
+  width: 50%;
+  margin: 2rem 1rem;
+  display: grid;
+}
+
+#config-image .submit-box p {
+  font-size: 1.6rem;
+  color: rgb(141, 141, 141);
+}
+
+#config-image .submit {
+  width: max-content;
+  background: #2c2c2c;
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 25px;
+  justify-self: center;
+}
+
+#config-image .submit.white {
+  background: white;
+  color: black;
+}
+
+#config-image .crop-banner .reactEasyCrop_CropArea {
+  border: 1px solid aqua;
+  width: 600px;
+  height: 600px;
+}
+
+.reactEasyCrop_CropArea {
+  box-shadow: none !important;
+}
+
+#config-image .crop-banner .reactEasyCrop_CropArea::before {
+  content: "";
+  position: absolute;
+  left: 21.33%;
+  top: 36.33%;
+  bottom: 0;
+  width: 60%;
+  height: 25%;
+  background: transparent;
+  border: 1px solid aqua;
+  box-shadow: 0px 0px 0px calc(var(--crop-height) * 1px)
+    rgba(255, 255, 255, 0.5);
+}
+
+#config-image .crop-banner .reactEasyCrop_CropArea::after {
+  content: "";
+  position: absolute;
+  top: 36.33%;
+  left: 0;
+  right: 0;
+  height: 25%;
+  background: transparent;
+  border: 1px solid aqua;
+}
+
+.container-cropper-text {
+  position: relative;
+  z-index: 500;
+  align-self: center;
+  justify-self: center;
+  pointer-events: none;
+}
+
+.container-cropper-text > .tv,
+.container-cropper-text > .pc,
+.container-cropper-text > .cel {
+  position: relative;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.8);
+  width: max-content;
+  color: rgb(78, 78, 78);
+  border-radius: 15px;
+  cursor: default;
+  font-size: 1.3rem;
+  pointer-events: auto;
+}
+
+.container-cropper-text > .tv {
+  position: absolute;
+  top: 3%;
+  left: 3%;
+  transform: translate(-3%, -3%);
+}
+
+#config-image .crop-banner.activeTv .reactEasyCrop_CropArea::before {
+  box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0.5);
+  border: none;
+}
+
+#config-image .crop-banner.activeTv .reactEasyCrop_CropArea::after {
+  border: none;
+}
+
+#config-image .crop-banner.activeTv .pc,
+#config-image .crop-banner.activeTv .cel {
+  visibility: hidden;
+}
+
+.container-cropper-text > .pc {
+  position: absolute;
+  top: 41%;
+  left: 3%;
+  transform: translate(-3%, -41%);
+}
+
+#config-image .crop-banner.activePc .reactEasyCrop_CropArea::before,
+#config-image .crop-banner.activeCel .reactEasyCrop_CropArea {
+  box-shadow:
+    0px calc(var(--crop-height) * 1.25 * 1px) 0px calc(var(--crop-height) * 1px)
+      rgba(255, 255, 255, 0.5),
+    0px calc(var(--crop-height) * 1.25 * -1px) 0px
+      calc(var(--crop-height) * 1px) rgba(255, 255, 255, 0.5);
+  border: none;
+}
+
+#config-image .crop-banner.activePc .tv,
+#config-image .crop-banner.activePc .cel {
+  visibility: hidden;
+}
+
+.container-cropper-text > .cel {
+  position: absolute;
+  top: 41%;
+  left: 31%;
+  transform: translate(-31%, -41%);
+}
+
+#config-image .crop-banner.activeCel .reactEasyCrop_CropArea::after,
+#config-image .crop-banner.activeCel .reactEasyCrop_CropArea {
+  border: none;
+}
+
+#config-image .crop-banner.activeCel .tv,
+#config-image .crop-banner.activeCel .pc {
+  visibility: hidden;
+}
+
+#config-image .cropper-section .crop-photo {
+  position: relative;
+  display: grid;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#config-image .cropper-section .crop-photo .reactEasyCrop_CropArea::after {
+  border: none;
+}
+
+#config-image .cropper-section .crop-photo .reactEasyCrop_CropArea {
+  border: 1px solid aqua;
+  max-width: 70%;
+  min-height: 70%;
+}
+
+#config-image .cropper-section .crop-photo .reactEasyCrop_CropArea::before {
+  border: 1px solid aqua;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  justify-self: center;
+  align-self: center;
+}

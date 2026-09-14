@@ -1,0 +1,41 @@
+.circle-box {
+  margin-left: 1rem;
+}
+
+.line {
+  background: #454545;
+  width: 35px;
+  height: 15px;
+  border-radius: 25px;
+  position: relative;
+  top: 16px;
+}
+
+#nav.white .line {
+  background: #d1d1d1;
+}
+
+.circle {
+  background: #ffffff;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  position: relative;
+  left: -5px;
+  top: -2px;
+  transition: 0.5s;
+}
+
+#nav.white .circle {
+  background: #454545;
+}
+
+.circle.active {
+  background: #3ea6ff !important;
+  left: 17px;
+  transition: 0.5s;
+}
+
+.Line {
+  border-bottom: 1px solid #454545;
+}

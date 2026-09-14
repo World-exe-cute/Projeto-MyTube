@@ -1,0 +1,16 @@
+.message-error {
+  display: inline-flex;
+  color: #f2b8b5;
+  align-items: center;
+  margin: 1rem;
+}
+
+.message-error > i {
+  display: none;
+  margin-right: 5px;
+  font-size: 1.5rem;
+}
+
+.message-error.error > i {
+  display: inline-flex;
+}

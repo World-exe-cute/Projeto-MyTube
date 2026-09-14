@@ -1,0 +1,58 @@
+#channel-videos .user-video .info-box {
+  margin-left: 1rem;
+}
+
+#channel-videos .video-box:hover {
+  cursor: pointer;
+  background: rgba(47, 47, 47, 0.5);
+}
+
+#channel-videos .user-video .info-box > h2 {
+  all: unset;
+  font-size: 1.6rem;
+  max-width: var(--info-box-title-width);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+#channel-videos .user-video .info-box {
+  display: grid;
+  grid-template-rows: 1fr 3fr;
+  width: 100%;
+}
+
+#channel-videos .user-video .info-box > textarea {
+  all: unset;
+  overflow: hidden;
+}
+
+#channel-posts .user-video .thumb-box {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+#channel-videos .user-video .video-box {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+#channel-videos .user-video .thumb-box {
+  position: relative;
+}
+
+#channel-videos .user-video .thumb-box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+  border-radius: 10px;
+  width: 140px;
+}
+
+#channel-videos .user-video .thumb-box > img {
+  width: 140px;
+  max-height: 80px;
+  border-radius: 10px;
+}

@@ -1,0 +1,28 @@
+#bars-option.active > aside,
+#bars-channel.active > aside {
+  left: 0 !important;
+  transition: 0.5s !important;
+}
+
+#body.active > div {
+  overflow-y: hidden;
+}
+
+.active-wall {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);
+  z-index: -2;
+  transition: 0.2s;
+}
+
+.active-wall.active {
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 15;
+  transition: 0.2s;
+}
+
+#nav.line-channel .active-wall.active {
+  background: rgba(0, 0, 0, 0.3);
+}

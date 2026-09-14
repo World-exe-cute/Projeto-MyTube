@@ -1,0 +1,9 @@
+.check-box {
+  display: inline-flex;
+  align-items: center;
+}
+
+.check-box > input {
+  width: 2rem;
+  height: 2rem;
+}

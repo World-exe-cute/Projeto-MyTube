@@ -1,0 +1,116 @@
+.image-container {
+  display: grid;
+  height: 500px;
+  grid-template-columns: 1fr 20fr 1fr;
+}
+
+.image-container > div {
+  position: relative;
+}
+
+.image-container > div > .img-right.under,
+.image-container > div > .img-left.under {
+  z-index: 1;
+}
+
+.image-container > div > .img-center {
+  width: 100%;
+  height: 500px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 3;
+  left: 0rem;
+  top: 0rem;
+}
+
+.image-container > div > .img-center.activeRight {
+  left: -5rem;
+  top: 2.5rem;
+  height: 450px;
+  z-index: 2;
+  transition: 0.5s;
+}
+
+.image-container > div > .img-center.activeLeft {
+  left: 5rem;
+  top: 2.5rem;
+  height: 450px;
+  z-index: 2;
+  transition: 0.5s;
+}
+
+.image-container > div > .img-right {
+  width: 100%;
+  height: 450px;
+  position: absolute;
+  left: 5rem;
+  top: 2.5rem;
+  z-index: 2;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.image-container > div > .img-right.active {
+  top: 0;
+  left: 0;
+  height: 500px;
+  z-index: 3;
+  transition: 0.5s;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.image-container > div > .img-left {
+  width: 100%;
+  height: 450px;
+  position: absolute;
+  left: -5rem;
+  top: 2.5rem;
+  z-index: 2;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.image-container > div > .img-left.active {
+  top: 0;
+  left: 0;
+  height: 500px;
+  z-index: 3;
+  transition: 0.5s;
+}
+
+.image-container > button {
+  all: unset;
+  font-size: 2rem;
+  color: var(--view-mode-color);
+  padding: 2rem;
+  align-self: center;
+  border-radius: 25px;
+  position: relative;
+  cursor: pointer;
+  z-index: 4;
+}
+
+.image-container > button.hidden {
+  visibility: hidden;
+}
+
+.post-container.check .image-container > button:first-child {
+  left: 4rem;
+  background: var(--view-mode-shadow);
+  box-shadow: 3px 3px 10px var(--view-mode-color);
+}
+
+.post-container.check .image-container > button:last-child {
+  left: -4rem;
+  background: var(--view-mode-shadow);
+  box-shadow: -2px 3px 10px var(--view-mode-color);
+}
+
+.post-container.check .image-container > button:hover {
+  background: rgb(100, 100, 100);
+}

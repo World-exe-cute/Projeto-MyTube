@@ -1,0 +1,23 @@
+.square-box {
+  font-size: 1.2rem;
+  border: 2px solid gray;
+  border-radius: 3px;
+  height: max-content;
+  margin-right: 1rem;
+  padding: 0rem 0.2rem;
+}
+
+.square-box > i {
+  color: rgba(0, 0, 0, 0);
+  background: rgba(255, 255, 255, 0);
+  transition: 0.3s;
+}
+
+.square-box.check {
+  background: rgba(255, 255, 255, 1);
+  transition: 0.3s;
+}
+
+.square-box.check > i {
+  color: rgba(0, 0, 0, 1);
+}

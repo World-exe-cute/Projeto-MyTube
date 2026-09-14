@@ -1,0 +1,79 @@
+.feed-post-container > div:first-child {
+  display: flex;
+}
+
+.feed-post-container .user-post-photo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.feed-post-container .user-post-photo > img {
+  width: 100%;
+  height: 100%;
+  align-self: center;
+  justify-self: center;
+  border-radius: 50%;
+}
+
+.feed-post-container .user-post-photo > div:last-child {
+  font-size: 1.5rem;
+  margin-left: 1rem;
+  align-self: center;
+}
+
+.feed-post-container .user-post-info .post-text {
+  margin-left: 5rem;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.feed-post-container .post-options {
+  display: flex;
+  margin-left: 5rem;
+  margin-top: 1rem;
+}
+
+.feed-post-container .post-options i {
+  font-size: 2rem;
+  padding: 1rem;
+  align-self: center;
+}
+
+.feed-post-container .post-options i:hover {
+  cursor: pointer;
+  background: var(--view-mode-shadow);
+  border-radius: 50%;
+}
+
+.feed-post-container .post-options span {
+  align-self: center;
+  font-size: 1.3rem;
+}
+
+.feed-post-container .post-options > div {
+  padding: 0.5rem;
+  border-radius: 15px;
+}
+
+.feed-post-container .post-options > div > i {
+  margin: 0;
+}
+
+.feed-post-container .post-options > div:hover {
+  background: var(--view-mode-shadow);
+  cursor: pointer;
+}
+
+.feed-post-container .user-post-info .image-container > button:first-child {
+  left: 4rem !important;
+  background: var(--view-mode-shadow) !important;
+  box-shadow: 3px 3px 10px var(--view-mode-color) !important;
+}
+
+.feed-post-container .user-post-info .image-container > button:last-child {
+  left: -4rem !important;
+  background: var(--view-mode-shadow) !important;
+  box-shadow: -2px 3px 10px var(--view-mode-color) !important;
+}

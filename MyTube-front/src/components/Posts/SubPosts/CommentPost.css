@@ -1,0 +1,27 @@
+.comment-post-container {
+  border: 1px solid gray;
+  border-radius: 15px;
+  width: 80%;
+  margin: 1rem 5rem;
+  padding: 1rem;
+  max-width: 500px;
+  margin-bottom: 3rem;
+}
+
+#post-profile {
+  overflow-y: auto;
+  height: calc(var(--vh) * 95);
+  width: 93vw;
+  white-space: nowrap;
+}
+
+#post-profile::-webkit-scrollbar {
+  background: rgba(255, 255, 255, 0);
+  width: 3px;
+  height: 30%;
+}
+
+#post-profile::-webkit-scrollbar-thumb {
+  background: white;
+  border-radius: 10px;
+}

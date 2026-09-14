@@ -1,0 +1,185 @@
+/*-------------------------------------------------------------
+                            Header
+---------------------------------------------------------------*/
+#nav {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+#nav .postVideo a:hover {
+  background: rgba(47, 47, 47, 0.8);
+}
+
+#nav .block-wall {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transition: 0.1s;
+}
+
+#nav header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--view-mode);
+  color: var(--view-mode-color);
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#nav .channel {
+  background: #282828;
+  color: white;
+}
+
+#nav.line-channel .back-circle {
+  color: white;
+}
+
+#nav .channel {
+  background: #282828;
+}
+
+#nav .start-header,
+#nav .start-header button,
+#nav .start-header div,
+#nav .end-header {
+  display: flex;
+  font-size: 25px;
+  align-items: center;
+}
+
+#nav .post-video a {
+  display: flex;
+  font-size: 17px;
+  align-items: center;
+  padding: 10px 18px;
+  border-radius: 30px;
+}
+
+#nav .end-header a > div:last-child {
+  margin-left: 0.5rem;
+}
+
+#nav.line-channel .end-header i {
+  flex: 1;
+  justify-content: end;
+  flex-grow: 1;
+  color: white;
+}
+
+#nav .end-header i {
+  flex: 1;
+  justify-content: end;
+  flex-grow: 1;
+  color: var(--view-mode-color);
+}
+
+#nav #insert {
+  width: 100%;
+}
+
+#nav.line-channel {
+  border-bottom: 1px solid #1d1d1d;
+}
+
+#nav #insert:focus {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border: 1px solid rgb(46, 46, 230);
+}
+
+#nav.dark .profile-background:hover {
+  background: rgba(47, 47, 47, 0.5);
+}
+
+#nav.white .profile-background:hover {
+  background: rgba(230, 229, 229, 0.1);
+}
+
+#nav .profile-background {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+#nav .profile-background .default {
+  background: orange;
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  align-content: center;
+}
+
+#nav .profile-background .default > div {
+  justify-self: center;
+  font-size: 2rem;
+}
+
+#nav .profile-background img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+#nav header form input:focus {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border: 1px solid rgb(46, 46, 230);
+  border-left: none;
+}
+
+#nav header form {
+  display: flex;
+  margin-right: 1rem;
+}
+
+#nav #bars-option > aside {
+  display: block;
+  position: absolute;
+  color: var(--view-mode-color);
+  background: var(--view-mode);
+  overflow-y: auto;
+  height: calc(var(--vh) * 100);
+  left: -400px;
+  top: 0;
+  transition: 0.5s;
+  z-index: 200;
+}
+#nav #bars-channel > aside {
+  display: block;
+  position: absolute;
+  color: var(--view-mode);
+  background: color-mix(in srgb, var(--view-mode-color), black 80%);
+  overflow-y: auto;
+  left: -400px;
+  top: 0;
+  transition: 0.5s;
+  z-index: 200;
+}
+
+#nav .notification {
+  display: none;
+}
+
+#nav .perfil {
+  display: none;
+}
+
+#nav .reset-config {
+  background: var(--view-mode);
+  outline: none;
+  color: var(--view-mode-color);
+  text-decoration: none;
+}
+
+#nav.line-channel .reset-config {
+  background: #0f0f0f;
+  outline: none;
+  color: white;
+  text-decoration: none;
+}
