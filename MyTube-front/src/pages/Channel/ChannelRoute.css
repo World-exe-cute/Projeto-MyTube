@@ -1,0 +1,8 @@
+#Config {
+  display: flex;
+  background: #282828;
+}
+
+#Config > .channel-route {
+  width: 100%;
+}

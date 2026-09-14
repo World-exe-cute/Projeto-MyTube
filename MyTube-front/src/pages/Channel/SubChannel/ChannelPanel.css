@@ -1,0 +1,115 @@
+#channel_panel {
+  min-width: 700px;
+  width: 60%;
+  margin-left: 3rem;
+  color: white;
+  /*height: calc(var(--vh) * 94);*/
+}
+
+#channel_panel h1 {
+  font-size: 2.5rem;
+}
+
+#channel_panel h2 {
+  font-size: 1.7rem;
+}
+
+#channel_panel > div {
+  display: flex;
+}
+
+#channel_panel > div > div {
+  border: 1px solid rgb(73, 73, 73);
+  width: 49%;
+  border-radius: 15px;
+}
+
+#channel_panel > div > div:first-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#channel_panel > div > div img {
+  width: 92%;
+  margin: 4%;
+  border-radius: 15px;
+}
+
+#channel_panel > div > div h2 {
+  margin: 4%;
+  font-size: 2rem;
+}
+
+#channel_panel .section {
+  border: 1px solid rgb(73, 73, 73);
+  margin: 2rem;
+  height: 93%;
+  border-radius: 10px;
+  border-style: dashed;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#channel_panel .section button {
+  background: white;
+  color: black;
+  padding: 1rem 1.5rem;
+  border-radius: 25px;
+  display: flex;
+  width: max-content;
+  font-size: 1.5rem;
+  justify-self: center;
+  cursor: pointer;
+}
+
+#channel_panel .section_2 .circle_buttons {
+  font-size: 1.5rem;
+  color: white;
+}
+
+#channel_panel .section_2 {
+  margin: 2rem;
+  height: 96%;
+}
+
+#channel_panel .section_2 > section {
+  margin: 1rem;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+
+#channel_panel .section_2 > section:first-child {
+  border-bottom: 1px solid rgb(73, 73, 73);
+  padding-bottom: 4rem;
+}
+
+#channel_panel .section_2 > section:last-child {
+  border-top: 1px solid rgb(73, 73, 73);
+}
+
+#channel_panel .section_2 > section dt {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+#channel_panel .section_2 > section dd {
+  font-size: 1.2rem;
+  justify-self: end;
+  margin: 1rem 0rem;
+}
+
+#channel_panel .section_2 > section dd.exept {
+  justify-self: baseline;
+}
+
+#channel_panel > div > div:first-child {
+  height: 600px;
+}
+
+#channel_panel > div > div:last-child {
+  margin-left: 2%;
+  height: 500px;
+}

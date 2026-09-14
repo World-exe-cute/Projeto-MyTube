@@ -1,0 +1,19 @@
+#video-channels {
+  margin-left: 4rem;
+}
+
+#video-channels > div:first-child {
+  font-size: 3rem;
+  margin: 1rem;
+}
+
+#video-channels::-webkit-scrollbar {
+  background: rgba(255, 255, 255, 0);
+  width: 3px;
+  height: 30%;
+}
+
+#video-channels::-webkit-scrollbar-thumb {
+  background: white;
+  border-radius: 10px;
+}

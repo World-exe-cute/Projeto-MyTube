@@ -1,0 +1,52 @@
+.channel-feed {
+  width: 90%;
+  display: flex;
+}
+
+.channel-feed img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  margin: 1rem;
+}
+
+.channel-feed .default {
+  background: orange;
+  width: 130px;
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin: 1rem 1rem;
+  font-size: 4rem;
+}
+
+.channel-feed > div:last-child {
+  width: 100%;
+  margin-left: 1rem;
+  align-self: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.channel-feed > div:last-child .sub-box {
+  justify-self: end;
+  align-self: center;
+}
+
+.channel-feed > div:last-child .name {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.channel-feed > div:last-child .info-box {
+  font-size: 1.3rem;
+  display: flex;
+  margin-bottom: 0.5rem;
+}
+
+.channel-feed > div:last-child .info-box > .view-espace {
+  margin: 0 0.5rem;
+}

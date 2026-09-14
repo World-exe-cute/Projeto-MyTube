@@ -1,0 +1,77 @@
+/*------------------------------------------------------------------------
+                                main
+--------------------------------------------------------------------------*/
+
+main {
+  background: var(--view-mode);
+  display: flex;
+  color: var(--view-mode-color);
+}
+
+#options-start span {
+  display: block;
+  font-size: 1rem;
+  justify-content: center;
+  display: flex;
+}
+
+.ajust {
+  padding-left: 6px;
+}
+
+#options-start {
+  background: var(--view-mode);
+  z-index: 1;
+  position: relative;
+
+  left: -1rem;
+  height: max-content;
+  position: sticky;
+  top: 65px;
+  left: 0;
+}
+
+#options-start.transparent {
+  background: transparent;
+  border: none;
+}
+
+#options-start i {
+  font-size: 2rem;
+}
+
+#options-start > a {
+  display: block;
+  padding-bottom: 25px;
+  padding: 18px 8px 18px 8px;
+}
+
+#options-start > a.white:hover {
+  background: #f2f2f2;
+  border-radius: 15px;
+}
+
+#options-start > a.dark:hover {
+  background: #272727;
+  border-radius: 15px;
+}
+
+#options-start > a > div {
+  display: flex;
+  justify-content: center;
+}
+
+.main-feed {
+  min-width: 0;
+  width: 100%;
+}
+
+.main-feed > div:first-child.none {
+  height: 0;
+  overflow: hidden;
+}
+
+.main-feed > div:first-child {
+  height: 45px;
+  overflow: hidden;
+}

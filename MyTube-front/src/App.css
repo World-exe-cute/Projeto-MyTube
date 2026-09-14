@@ -1,0 +1,62 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto";
+  /*overflow: hidden;*/
+}
+
+body::-webkit-scrollbar {
+  background: rgba(255, 255, 255, 0);
+  width: 10px;
+  height: 30%;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--view-mode-color), white 40%);
+  border-radius: 10px;
+}
+
+html {
+  font-size: calc(var(--vh));
+  background: var(--view-mode);
+}
+
+#blocker {
+  /*width: 100%;*/
+  /*height: calc(var(--vh) * 100);*/
+  background: var(--view-mode);
+  z-index: 6;
+}
+
+#blocker.channel {
+  background: #2c2c2c;
+  z-index: 6;
+}
+
+button {
+  background-color: unset;
+  border: unset;
+}
+
+a {
+  all: unset;
+  color: var(--view-mode-color);
+  cursor: pointer;
+}
+
+.hidden-visual {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/*.reset-background {
+  background: #2c2c2c !important;
+}*/

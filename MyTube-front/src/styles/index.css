@@ -1,0 +1,140 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 1px solid blue;
+    font-family: 'Roboto';
+}
+/*--------------------------------------------------------------------------------------------
+                                        header
+----------------------------------------------------------------------------------------------*/
+.header-background {
+    border: 1px solid red;
+    background-color: #0F0F0F;
+    color: #FFFFFF;
+    margin: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.col-6 .header-background {
+    width: 50%;
+}
+
+.logo-width {
+    width: 130px;
+}
+
+.row {
+    align-items: center;
+}
+
+.logo-font {
+    display: flex;
+    font-size: 25px;
+    padding: 5px;
+}
+
+.logo-font div {
+    font-family: sans-serif;
+}
+
+.logo-width {
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 0px;
+    border: 1px solid blue;
+}
+
+.bars-option {
+    margin-right: 5px;
+}
+
+.logo-color {
+    color: #FF0033;
+    background: radial-gradient(white,#0F0F0F,#0F0F0F);
+}
+
+.search-header {
+    display: flex;
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.input-header {
+    background-color: #0F0F0F;
+    display: flex;
+    outline: none;
+    border: none;
+    color: #FFFFFF;
+    font-size: 15px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    width: 100%;
+    align-items: center;
+    border: 1px solid #2F2F2F;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.input-header:focus {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.button-input-header {
+    background-color: #0F0F0F;
+    outline: none;
+    border: none;
+    color: #FFFFFF;
+    padding-left: 10px;
+    align-items: center;
+    border: 1px solid #2F2F2F;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-left: none;
+}
+
+.button-input-header i {
+    padding-right: 6px;
+    padding-top: 3px;
+}
+
+.flex-div {
+    display: flex;
+}
+
+#searchActive {
+    display: none;
+}
+
+.active-input {
+    display: flex !important;
+    align-items: center;
+    border: 1px solid #2F2F2F;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.icon-width {
+    font-size: 25px;
+    width: 40px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 10px;
+}
+
+.options {
+    display: flex;
+    justify-content: end;
+    width: 100px;
+}
+
+.test {
+    border: 1px solid blue;
+}

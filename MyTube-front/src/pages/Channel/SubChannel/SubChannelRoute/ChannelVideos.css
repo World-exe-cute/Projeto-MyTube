@@ -1,0 +1,72 @@
+#channel-videos {
+  color: white;
+}
+
+#channel-videos > .grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+#channel-videos .user-video {
+  display: block;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+  padding: 0rem 0.5rem;
+  padding-left: 3rem;
+  font-size: 1.3rem;
+  align-items: center;
+  border-right: 1px solid gray;
+}
+
+#channel-videos .video-mark {
+  display: flex;
+  align-items: center;
+}
+
+#channel-videos .user-video-info {
+  border-bottom: 1px solid gray;
+  display: flex;
+  border-top: 1px solid gray;
+  font-size: 1.3rem;
+}
+
+#channel-videos .last-div {
+  width: 100%;
+  justify-items: center;
+  margin-top: 5rem;
+}
+
+#channel-videos .last-div > p {
+  font-size: 2rem;
+}
+
+#channel-videos .last-div > button {
+  all: unset;
+  display: flex;
+  font-size: 2rem;
+  border: 1px solid gray;
+  border-radius: 15px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+@media (max-width: 1400px) {
+  #channel-videos > .grid-container > .user-video-info {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  #channel-videos > .grid-container > .user-video-info::-webkit-scrollbar {
+    background: rgba(255, 255, 255, 0);
+    width: 10px;
+    height: 3px;
+  }
+
+  #channel-videos
+    > .grid-container
+    > .user-video-info::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 10px;
+  }
+}

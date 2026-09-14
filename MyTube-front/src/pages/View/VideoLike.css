@@ -1,0 +1,82 @@
+#video-like {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: center;
+  margin: 2rem auto;
+}
+
+#video-like.row {
+  margin: auto;
+  justify-content: normal;
+  grid-auto-flow: row;
+}
+
+#video-like-empty {
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+  font-size: 2.5rem;
+}
+
+#video-like > .background-video {
+  padding: 3rem 2rem;
+  margin-right: 5rem;
+  height: 600px;
+  border-radius: 25px;
+  background: linear-gradient(
+    to bottom,
+    var(--view-mode-shadow),
+    var(--view-mode)
+  );
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+#video-like.row > div {
+  margin: 2rem;
+  height: auto;
+}
+
+#video-like.row > .background-video {
+  justify-content: center;
+  display: flex;
+}
+
+#video-like > .background-video::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 90%;
+  background-image: var(--img-like);
+  filter: blur(125px);
+  transform: scale(1.2);
+  opacity: 0.5;
+}
+
+#video-like > .background-video > img {
+  width: 350px;
+  height: 200px;
+  border-radius: 15px;
+  z-index: 2;
+}
+
+#video-like > .background-video > div {
+  align-content: center;
+  margin-left: 1rem;
+  margin-top: 1rem;
+  z-index: 2;
+}
+
+#video-like > .background-video > div > div:first-child {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+#video-like > .background-video > div > div:last-child {
+  font-size: 1.4rem;
+}
+
+#video-like > .background-video > div > div:last-child > div {
+  margin-bottom: 1rem;
+}

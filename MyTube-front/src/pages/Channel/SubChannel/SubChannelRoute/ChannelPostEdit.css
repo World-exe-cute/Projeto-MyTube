@@ -1,0 +1,172 @@
+#post-edit {
+  margin: 0 5rem;
+  color: white;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+#post-edit h2 {
+  all: unset;
+}
+
+#post-edit > div:first-child {
+  margin-right: 3rem;
+}
+
+#post-edit .visibility-box {
+  display: grid;
+  margin-top: 2rem;
+  grid-auto-rows: 1fr;
+}
+
+#post-edit .visibility-box > h2 {
+  font-size: 2rem;
+}
+
+#post-edit .text-box,
+#post-edit .content-box,
+#post-edit .post-info,
+#post-edit .image-box {
+  border: 1px solid gray;
+  border-radius: 15px;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+}
+
+#post-edit .text-box > h2 {
+  all: unset;
+  font-size: 1.5rem;
+}
+
+#post-edit .text-box > p {
+  font-size: 1.5rem;
+}
+
+#post-edit .content-box {
+  margin-top: 2rem;
+}
+
+#post-edit > div:last-child > h2 {
+  font-size: 2rem;
+}
+
+#post-edit > div:first-child > div:last-child > button {
+  all: unset;
+  border: 1px solid gray;
+  border-radius: 15px;
+  width: 100px;
+  padding: 1rem 0;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+#post-edit > div:first-child > div:last-child > button > div {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+
+#post-edit > div:first-child > div:last-child > button > div:last-child {
+  display: none;
+}
+
+#post-edit > div:first-child > div:last-child > button.active > div:last-child {
+  display: flex;
+}
+
+#post-edit > div:first-child > div:last-child > button > div:hover {
+  background: rgba(68, 68, 68, 0.8);
+}
+
+#post-edit > div:first-child > div:last-child > button > div > i {
+  margin-left: auto;
+}
+
+#post-edit .post-info > div:first-child {
+  display: flex;
+  font-size: 1.5rem;
+}
+
+#post-edit .post-info > div > div {
+  margin: 0 1rem;
+  height: 50px;
+}
+
+#post-edit .post-type {
+  margin-left: 1rem;
+  display: block;
+  font-size: 1.5rem;
+  border-top: 1px solid gray;
+  padding-top: 1rem;
+  margin-right: 1rem;
+}
+
+#post-edit .post-type .type-box {
+  display: flex;
+  align-items: center;
+}
+
+#post-edit .post-type .type-box > i {
+  margin-right: 1rem;
+  font-size: 2rem;
+}
+
+/*===================pollbox==============*/
+
+#post-edit .image-box > .poll {
+  display: flex;
+  margin: 1rem 0;
+}
+
+#post-edit .image-box .check {
+  width: 15px;
+  height: 15px;
+  border: 1px solid var(--view-mode-color);
+  border-radius: 50%;
+  margin-right: 1rem;
+  align-self: center;
+}
+
+#post-edit .image-box > .poll.view .poll-line,
+#post-edit .image-box > .poll.view .check {
+  border: 2px solid rgb(30, 134, 253);
+}
+
+#post-edit .image-box > .poll > .poll-line {
+  border: 1px solid var(--view-mode-color);
+  padding: 0.5rem;
+  font-size: 1.7rem;
+  width: 90%;
+  border-radius: 5px;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+#post-edit .image-box > .poll > .poll-line > div {
+  z-index: 3;
+}
+
+#post-edit .image-box > .poll > .poll-line.check {
+  color: blue;
+}
+
+#post-edit .image-box > .poll > .poll-line .collor-bar {
+  content: "";
+  position: absolute;
+  background: rgb(51, 143, 248);
+  width: 100%;
+  height: 100%;
+  left: 100%;
+  top: 0;
+  border-radius: 5px;
+}
+
+#post-edit .image-box > .poll > .poll-line > .percent {
+  margin-left: auto;
+  visibility: hidden;
+}
+
+#post-edit .image-box > .poll > .poll-line > .percent.view {
+  visibility: visible;
+}

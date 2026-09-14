@@ -1,0 +1,193 @@
+/*--------------geral-----------------------*/
+
+#body,
+#root,
+.App,
+#blocker,
+#row {
+  width: 100%;
+}
+
+#body,
+#root,
+.App,
+#row {
+  background: var(--view-mode);
+}
+#row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+}
+
+#row > div:first-child,
+#row > div:last-child {
+  flex: 1;
+}
+
+#row .center {
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  flex: 3;
+}
+
+#row .center > .center-block {
+  padding: 2rem 2rem 2rem 0rem;
+  display: block;
+  background: #0f0f0f;
+  border-radius: 2rem;
+  z-index: 0;
+}
+
+#row .center-block > div:first-child {
+  display: flex;
+}
+
+#row .center-block > div:first-child > * {
+  flex: 1;
+}
+
+#row .gen-block > button,
+#row .perso-block input,
+#row .perso-block button {
+  width: 91%;
+  padding-left: 1rem;
+}
+
+#row h2 {
+  font-size: calc((var(--vw) * 2) + (1rem));
+  margin-bottom: 2rem;
+  margin-top: 6rem;
+}
+
+#row button p {
+  all: unset;
+  padding-left: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 50%;
+}
+
+#row input,
+#row .input-auth button {
+  all: unset;
+  padding: 1.5rem 1.5rem 1.5rem 0;
+  font-size: 2rem;
+  background: #0f0f0f;
+  border: 1px solid rgb(168, 199, 250);
+  border-radius: 5px;
+  color: #ffffff;
+  pointer-events: auto;
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+}
+
+#row .inputFocus {
+  border: 3px solid rgb(14, 103, 245) !important;
+}
+
+#row .block-resize {
+  margin: 0.6rem 2rem !important;
+}
+
+#row .login-block .options-button {
+  font-size: 1.5rem;
+  flex: 1;
+  align-items: end;
+}
+
+#row .login-block {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#row .login-block > div {
+  flex: 5;
+  margin-top: 5rem;
+}
+
+#row .login-block h2 {
+  font-size: 1.7rem;
+  margin-top: 3rem;
+  margin-left: 1rem;
+}
+
+#row .passView {
+  display: inline-flex;
+  margin-top: 0.5rem;
+  align-items: center;
+  padding: 0.5rem;
+  width: auto;
+  cursor: pointer;
+}
+
+#row .checkBox {
+  width: 1rem;
+  margin-right: 1.5rem;
+  padding: 1rem;
+  border: 1px solid white;
+  border-radius: 8px;
+  color: rgba(138, 180, 248, 0);
+}
+
+#row .passView:hover .checkBox {
+  color: rgba(138, 180, 248, 0);
+}
+
+#row .check {
+  color: white;
+}
+
+#row .options-button {
+  display: flex;
+  justify-content: end;
+  margin-top: 2rem;
+}
+
+#row .passView:hover {
+  background: rgba(138, 180, 248, 0.1);
+  border-radius: 3rem;
+}
+
+#row .grid {
+  display: grid;
+  font-size: 1.6rem;
+}
+
+#row a {
+  color: aqua;
+}
+
+#row .in_display {
+  display: flex;
+  gap: 0.5rem;
+}
+
+#row .in_display > * {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+#row .in_display > * input,
+#row .in_display > * button {
+  padding-left: 1rem;
+  width: calc(var(--vw) * 8) !important;
+}
+
+#row .in_display.errorBox {
+  margin-top: 1rem;
+  position: relative;
+  left: -1rem;
+}
+
+#row .in_display > * > div:first-child {
+  width: 15%;
+  height: 30%;
+}

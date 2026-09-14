@@ -1,0 +1,145 @@
+#user-profile {
+  /*overflow-y: auto;*/
+  /*height: calc(var(--vh) * 95);*/
+  /*width: 93vw;*/
+  white-space: nowrap;
+}
+
+#user-profile .sub-box {
+  margin-left: 1.5rem;
+}
+
+#user-profile::-webkit-scrollbar {
+  background: rgba(255, 255, 255, 0);
+  width: 10px;
+  height: 30%;
+}
+
+#user-profile::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--view-mode-color), white 40%);
+  border-radius: 10px;
+}
+
+#user-profile > div:not(.reset):first-child {
+  width: 98%;
+  height: 200px;
+  margin: 1rem;
+}
+
+#user-profile > div:not(.reset):first-child.tv-box {
+  height: 900px;
+}
+
+#user-profile > div:first-child > img {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  align-self: center;
+  justify-self: center;
+}
+
+#user-profile > div:not(:first-child):not(:last-child),
+#user-profile > nav {
+  display: flex;
+  margin-top: 2rem;
+  margin-left: 13rem;
+}
+
+#user-profile .user-photo {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+#user-profile .default {
+  width: 150px;
+  height: 150px;
+  background: orange;
+  border-radius: 50%;
+  position: relative;
+  align-content: center;
+}
+
+#user-profile .default > div {
+  justify-self: center;
+  font-size: 5rem;
+  color: black;
+}
+
+#user-profile .user-info {
+  margin-left: 2rem;
+  font-size: 1.5rem;
+}
+
+#user-profile .user-info > div:first-child {
+  font-size: 5rem;
+}
+
+#user-profile .user-info div:not(:first-child) {
+  margin: 1rem 0;
+}
+
+#user-profile .user-info div:last-child {
+  min-width: 0;
+}
+
+#user-profile .user-info .description-box {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  line-clamp: 4;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+#user-profile .user-info .description-box.show-more {
+  display: block;
+  -webkit-line-clamp: unset;
+  line-clamp: unset;
+  -webkit-box-orient: unset;
+  overflow: visible;
+}
+
+#user-profile .user-info .description-box p {
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+#user-profile .user-option {
+  display: flex;
+}
+
+#user-profile .user-option a {
+  all: unset;
+  margin: 1rem;
+  font-size: 1.5rem;
+  border: 1px solid white;
+  padding: 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+#user-profile .video-option a {
+  font-size: 1.5rem;
+  margin: 1rem;
+  padding-bottom: 1rem;
+  color: gray;
+  border-bottom: 1px solid white;
+}
+
+#user-profile .video-option a.active {
+  font-size: 1.6rem;
+  color: var(--view-mode-color);
+  border-bottom: 3px solid var(--view-mode-color);
+}
+
+#user-profile .line-bottom {
+  border-bottom: 1px solid gray;
+  margin-top: -1rem;
+  margin-left: -13rem;
+}

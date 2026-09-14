@@ -1,0 +1,136 @@
+#channel-posts {
+  color: white;
+}
+
+#channel-posts .square-box {
+  font-size: 1.2rem;
+  border: 2px solid gray;
+  border-radius: 3px;
+  height: max-content;
+  margin-right: 1rem;
+  padding: 0rem 0.2rem;
+}
+
+#channel-posts .square-box > i {
+  color: rgba(0, 0, 0, 0);
+  background: rgba(255, 255, 255, 0);
+  transition: 0.3s;
+}
+
+#channel-posts .square-box.check {
+  background: rgba(255, 255, 255, 1);
+  transition: 0.3s;
+}
+
+#channel-posts .square-box.check > i {
+  color: rgba(0, 0, 0, 1);
+}
+
+#channel-posts .statistics {
+  display: flex;
+}
+
+#channel-posts .statistics p {
+  padding: 0rem 0.5rem;
+}
+
+#channel-posts > .grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+#channel-posts .user-video {
+  display: block;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+  padding: 0rem 0.5rem;
+  padding-left: 3rem;
+  font-size: 1.3rem;
+  align-items: center;
+  border-right: 1px solid gray;
+}
+
+#channel-posts .user-video .video-box {
+  display: flex;
+}
+
+#channel-posts .user-video .square-container {
+  margin-right: 1rem;
+}
+
+#channel-posts .user-video .thumb-box > img {
+  width: 55px;
+  border-radius: 10px;
+  position: absolute;
+  height: stretch;
+}
+
+#channel-posts .user-video .thumb-box > .img0 {
+  left: 11px;
+  z-index: 2;
+}
+
+#channel-posts .user-video .thumb-box > .img1 {
+  left: -4px;
+  z-index: 1;
+}
+
+#channel-posts .user-video .thumb-box > .img2 {
+  left: 28px;
+  z-index: 1;
+}
+
+#channel-posts .user-video .info-box {
+  margin-left: 10rem;
+}
+
+#channel-posts .video-mark {
+  display: flex;
+  align-items: center;
+}
+
+#channel-posts .user-video-info {
+  border-bottom: 1px solid gray;
+  display: flex;
+  border-top: 1px solid gray;
+  font-size: 1.3rem;
+}
+
+#channel-posts .last-div {
+  width: 100%;
+  justify-items: center;
+  margin-top: 5rem;
+}
+
+#channel-posts .last-div > p {
+  font-size: 2rem;
+}
+
+#channel-posts .last-div > button {
+  all: unset;
+  display: flex;
+  font-size: 2rem;
+  border: 1px solid gray;
+  border-radius: 15px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+@media (max-width: 1400px) {
+  #channel-posts > .grid-container > .user-video-info {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  #channel-posts > .grid-container > .user-video-info::-webkit-scrollbar {
+    background: rgba(255, 255, 255, 0);
+    width: 10px;
+    height: 3px;
+  }
+
+  #channel-posts > .grid-container > .user-video-info::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 10px;
+  }
+}

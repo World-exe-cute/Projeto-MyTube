@@ -1,0 +1,120 @@
+#analytics-overview {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  color: white;
+}
+
+#analytics-overview > div:first-child {
+  margin: 2rem;
+}
+
+#analytics-overview > div:last-child {
+  border: 1px solid gray;
+  border-radius: 15px;
+}
+
+#analytics-overview > div:last-child > div {
+  padding: 2rem;
+  font-size: 1.2rem;
+}
+
+#analytics-overview > div:last-child > div > div {
+  padding: 1rem;
+}
+
+#analytics-overview > div:last-child .container-1,
+#analytics-overview > div:last-child .container-2 {
+  border-bottom: 1px solid rgba(228, 228, 228, 0.2);
+}
+
+#analytics-overview > div:last-child .container-1 > div {
+  display: flex;
+}
+
+#analytics-overview > div:last-child .container-1 p {
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+#analytics-overview > div:last-child .container-1 .att-ball {
+  width: 9px;
+  height: 9px;
+  background: rgb(40, 183, 250);
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+#analytics-overview > div:last-child .container-4 {
+  border-top: 1px solid white;
+  padding-top: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+#analytics-overview > div:last-child .container-4 > div:last-child {
+  justify-self: end;
+}
+
+#analytics-overview > div:first-child h2 {
+  font-size: 3rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+#analytics-overview > div:first-child > div:first-of-type {
+  border: 1px solid gray;
+  border-radius: 15px;
+}
+
+#analytics-overview .line-chart {
+  width: 100%;
+  height: 150px;
+  margin-left: 2rem;
+}
+
+#analytics-overview > div > div:last-child .custom-tooltip {
+  position: relative;
+  top: 0px;
+  left: -45px;
+  background: #282828;
+  padding: 1rem;
+  border-radius: 15px;
+  font-size: 1.4rem;
+  border: 1px solid gray;
+}
+
+#analytics-overview > div > div:last-child .custom-tooltip > div:last-child {
+  font-size: 2rem;
+  padding-top: 1rem;
+}
+
+#analytics-overview .info-area {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-self: center;
+  width: 100%;
+}
+
+#analytics-overview .info-area > div {
+  padding: 2rem 4rem 4rem 4rem;
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+}
+
+#analytics-overview .info-area > div.background {
+  background: #1f1f1f;
+}
+
+#analytics-overview .info-area > div > p,
+#analytics-overview .info-area > div > div {
+  justify-self: center;
+}
+
+#analytics-overview .info-area > div:first-child {
+  border-right: 1px solid gray;
+}
+
+#analytics-overview .info-area > div:last-child {
+  border-left: 1px solid gray;
+  border-top-right-radius: 15px;
+}

@@ -1,0 +1,16 @@
+.hidden-wall {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: none !important;
+  z-index: 20;
+  transition: 0.2s;
+}
+
+.hidden-wall.show {
+  display: block !important;
+  transition: 0.2s;
+}

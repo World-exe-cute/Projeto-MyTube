@@ -1,0 +1,162 @@
+#user-post > .order {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-self: end;
+  font-size: 1.5rem;
+  margin-right: 2rem;
+  cursor: pointer;
+  width: max-content;
+}
+
+#user-post > .order > i {
+  margin-right: 5px;
+}
+
+#user-post > .order > .order-hidden {
+  position: absolute;
+  padding: 1rem 0;
+  border-radius: 15px;
+  background: var(--view-mode-shadow);
+  top: 35px;
+}
+
+#user-post > .order > .order-hidden > div {
+  cursor: pointer;
+  padding: 1rem 2rem;
+}
+
+#user-post > .order > .order-hidden > div i {
+  margin-left: 5px;
+}
+
+#user-post > .order > .order-hidden > div:hover {
+  background: color-mix(in srgb, var(--view-mode-shadow), gray 50%);
+}
+
+#user-post .post-container {
+  border: 1px solid gray;
+  border-radius: 15px;
+  width: 80%;
+  margin: 1rem 5rem;
+  padding: 1rem;
+  max-width: 500px;
+}
+
+#user-post .create-post {
+  font-size: 2rem;
+  justify-self: center;
+  margin-top: 3rem;
+}
+
+#user-post .post-container.check {
+  background: var(--view-mode-shadow);
+}
+
+#user-post .post-container > div:last-child {
+  display: flex;
+  justify-content: end;
+}
+
+#user-post .post-container button {
+  color: var(--view-mode-color);
+  font-size: 2rem;
+  display: flex;
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  margin: 1rem;
+}
+
+#user-post .post-container .post-button {
+  background: rgb(48, 47, 47);
+  color: rgb(94, 93, 93);
+}
+
+#user-post .post-container .post-button.check:hover {
+  background: rgb(144, 218, 247) !important;
+  cursor: pointer;
+}
+
+#user-post .post-container .post-button.check {
+  color: black;
+  background: rgb(93, 199, 241);
+}
+
+#user-post .post-container .cancel-button {
+  color: var(--view-mode-color);
+  cursor: pointer;
+}
+
+#user-post .post-container .cancel-button:hover,
+#user-post .post-container.check .type-box > div:hover,
+#user-post .post-container.check .type-box > label:hover {
+  background: rgb(100, 100, 100);
+}
+
+#user-post .user-info {
+  display: flex;
+}
+
+#user-post .user-info .img-box {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+#user-post .user-info img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+#user-post .post-box {
+  all: unset;
+  width: 100%;
+  max-height: 100px;
+  resize: none;
+  overflow-y: auto;
+  overflow-x: hidden;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-size: 1.5rem;
+  margin: 2rem;
+}
+
+#user-post .post-box::-webkit-scrollbar {
+  background: rgba(255, 255, 255, 0);
+  width: 3px;
+  height: 30%;
+}
+
+#user-post .post-box::-webkit-scrollbar-thumb {
+  background: var(--view-mode-color);
+  border-radius: 10px;
+}
+
+#user-post .type-box {
+  display: flex;
+  margin: 0 2rem;
+}
+
+#user-post .type-box > div,
+#user-post .type-box > label {
+  margin: 0 1rem;
+  display: flex;
+  padding: 0 2rem;
+  font-size: 1.5rem;
+  align-items: center;
+  cursor: pointer;
+}
+
+#user-post .type-box > div:hover,
+#user-post .type-box > label:hover {
+  background: var(--view-mode-shadow);
+  border-radius: 25px;
+}
+
+#user-post .type-box > div > i,
+#user-post .type-box > label > i {
+  margin-right: 1rem;
+  font-size: 2.5rem;
+}

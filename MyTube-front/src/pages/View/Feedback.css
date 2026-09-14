@@ -1,0 +1,49 @@
+#feedback-container {
+  height: calc(var(--vh) * 95);
+  display: flex;
+  width: 93vw;
+}
+
+#feedback-container > h2 {
+  margin: auto;
+  font-size: 3rem;
+}
+
+#feedback-container > form {
+  margin: auto;
+  align-self: center;
+  border: 1px solid gray;
+  padding: 3rem 2rem;
+  border-radius: 15px;
+  display: grid;
+  color: var(--view-mode-color);
+  background: var(--view-mode-shadow);
+}
+
+#feedback-container > form > h2 {
+  font-size: 2rem;
+  margin: auto;
+}
+
+#feedback-container > form > button {
+  cursor: pointer;
+  color: var(--view-mode-color);
+  background: var(--view-mode-shadow);
+  padding: 1rem 2rem;
+  border: 1px solid gray;
+  border-radius: 15px;
+  width: max-content;
+  margin: auto;
+}
+
+#feedback-container > form > textarea {
+  resize: none;
+  width: 500px;
+  height: 250px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}

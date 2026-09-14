@@ -1,0 +1,209 @@
+.center {
+  color: #ffffff;
+  height: calc(var(--vh) * 100);
+  background: #2c2c2c;
+  position: relative;
+  z-index: 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.center > div:last-child {
+  display: flex;
+  width: 65%;
+  z-index: 4;
+  justify-content: center;
+  bottom: 28rem;
+}
+
+.center > .center-block {
+  padding: 2rem 2rem 2rem 0rem;
+  width: calc((var(--vw) * 60) + (20rem));
+  display: flex;
+  background: #0f0f0f;
+  border-radius: 2rem;
+  z-index: 0;
+}
+
+.center-background {
+  z-index: 4;
+  background: #0f0f0f;
+  align-items: center;
+  padding-left: 2rem;
+  border-radius: 2rem;
+  margin-right: 1rem;
+  width: calc(var(--vw) * 50);
+}
+
+.in_display {
+  display: flex;
+}
+
+.year-block > div > input,
+.day-block > div > input,
+.month-block > div > button {
+  width: calc((var(--vw) * 9) + (2rem));
+}
+
+.gen-block > div > button,
+.perso-block input,
+.perso-block button {
+  width: calc((var(--vw) * 29) + (15rem));
+}
+
+.month-block {
+  margin: 0 2rem;
+}
+
+ul {
+  position: absolute;
+  background: #0f0f0f;
+  margin: 3.5rem 0.5rem;
+  padding: 0.5rem;
+  color: #ffffff;
+  border: 1px solid rgb(168, 199, 250);
+  border-top: 0;
+  font-size: 2rem;
+  list-style: none;
+  z-index: 5;
+}
+
+ul li {
+  margin: 1rem 0.5rem;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.month-block ul {
+  width: calc(var(--MonthBlock) - (1rem));
+}
+
+.gen-block ul {
+  width: calc(var(--GenBlock) - (1rem));
+}
+
+button div {
+  display: flex;
+  justify-content: end;
+  padding-right: 1.5rem;
+}
+
+button p {
+  all: unset;
+  width: 100%;
+}
+
+input,
+button {
+  all: unset;
+  padding: 1.5rem;
+  margin-left: 0.5rem;
+  font-size: 2rem;
+  background: #0f0f0f;
+  border: 1px solid rgb(168, 199, 250);
+  border-radius: 5px;
+  color: #ffffff;
+  pointer-events: auto;
+  display: flex;
+}
+
+.inputName {
+  background: #0f0f0f;
+  display: inline-block;
+  position: relative;
+  font-size: 2rem;
+  top: 4rem;
+  left: 2rem;
+  transition: 0.2s;
+}
+
+.inputFocus {
+  border: 3px solid rgb(14, 103, 245) !important;
+}
+
+.block-resize {
+  margin: 0.6rem 2rem !important;
+}
+
+.focus,
+.inputName:focus {
+  font-size: 1.5rem !important;
+  top: 1rem !important;
+  transition: 0.2s;
+}
+
+.inputName p {
+  all: unset;
+}
+
+.login-block .options-button,
+.login-block a:first-of-type {
+  font-size: 1.5rem;
+}
+
+.login-block {
+  margin-top: 8rem;
+  width: calc(var(--vw) * 50);
+}
+
+.login-block p {
+  font-size: 1.7rem;
+  margin-top: 3rem;
+  margin-left: 1rem;
+}
+
+a {
+  cursor: pointer;
+  color: rgb(168, 199, 250);
+  text-decoration: none;
+  margin-left: 0.5rem;
+}
+
+.options-button {
+  display: flex;
+  justify-content: end;
+}
+
+.options-button > div,
+.options-button a {
+  margin-right: 4rem;
+  padding: 1rem 2rem;
+  color: rgb(168, 199, 250);
+  cursor: pointer;
+}
+
+.options-button a:hover {
+  background: rgba(138, 180, 248, 0.1);
+  border-radius: 3rem;
+}
+
+.active-a {
+  background: rgba(255, 255, 255, 1);
+  border-radius: 3rem;
+  color: rgb(14, 103, 245) !important;
+}
+
+.active-a:hover {
+  background: rgb(194, 186, 241);
+}
+
+.subHelp {
+  width: 100%;
+  display: flex;
+}
+
+.help2 {
+  justify-content: end;
+}
+
+.subHelp p {
+  all: unset;
+  align-items: baseline;
+}
+
+.subHelp a {
+  margin-left: 2rem;
+  align-items: end;
+}

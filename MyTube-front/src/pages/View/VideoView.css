@@ -1,0 +1,95 @@
+#containerView {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  padding: 2rem;
+  overflow-y: auto;
+  background-color: var(--view-mode);
+  /*height: calc(var(--vh) * 90);*/
+  white-space: nowrap;
+  min-width: 0;
+  white-space: nowrap;
+  grid-auto-rows: max-content;
+  margin-right: 0.5rem;
+}
+
+#containerView::-webkit-scrollbar {
+  background: rgba(255, 255, 255, 0);
+  width: 10px;
+  height: 30%;
+}
+
+#containerView::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--view-mode-color), white 40%);
+  border-radius: 10px;
+}
+
+#containerView .collum2.collum-dual {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+#containerView .more {
+  border: 1px solid gray;
+  padding: 1rem 20%;
+  color: rgb(65, 65, 255);
+  font-size: 1.5rem;
+  border-radius: 25px;
+  justify-self: center;
+  cursor: pointer;
+}
+
+#containerView .collum2.collum-dual a {
+  margin: 1rem;
+}
+
+#containerView.sub-box {
+  display: grid;
+  grid-template-columns: none;
+  grid-template-rows: 1fr;
+}
+
+#containerView .box-resize {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+#containerView .box-mini {
+  display: grid;
+  grid-template-rows: 1fr;
+}
+
+#containerView .video-sub-box {
+  margin: 0 3rem;
+}
+
+.videoBox .video-js {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.collum1 {
+  z-index: 3;
+}
+
+.collum1 > div:first-child {
+  margin: 1rem;
+  border-radius: 15px;
+}
+
+.collum2 {
+  margin-left: 1rem;
+}
+
+.collum2 > div:first-child {
+  width: calc(var(--vw) * 28);
+  height: 45px;
+  overflow: hidden;
+}
+
+@media (max-width: 1060px) {
+  #containerView {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
+}

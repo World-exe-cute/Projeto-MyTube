@@ -1,0 +1,66 @@
+#community-comments {
+  color: white;
+}
+
+#community-comments > div:first-child {
+  font-size: 1.5rem;
+  display: flex;
+  padding-left: 3rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid gray;
+}
+
+#community-comments > div:first-child > i {
+  align-self: center;
+}
+
+#community-comments > div:first-child button > i {
+  margin-left: 1rem;
+}
+
+#community-comments .mark-all {
+  border-right: 1px solid gray;
+  display: flex;
+  align-items: center;
+  padding: 2rem 0rem;
+  padding-left: 3rem;
+  border-bottom: 1px solid gray;
+}
+
+#community-comments .mark-all > div:last-child {
+  font-size: 1.5rem;
+}
+
+#community-comments .square-box {
+  font-size: 1.2rem;
+  border: 2px solid gray;
+  border-radius: 3px;
+  height: max-content;
+  margin-right: 1rem;
+  padding: 0rem 0.2rem;
+}
+
+#community-comments .square-box > i {
+  color: rgba(0, 0, 0, 0);
+  background: rgba(255, 255, 255, 0);
+  transition: 0.3s;
+}
+
+#community-comments .square-box.check {
+  background: rgba(255, 255, 255, 1);
+  transition: 0.3s;
+}
+
+#community-comments .square-box.check > i {
+  color: rgba(0, 0, 0, 1);
+}
+
+#community-comments .comment-feed {
+  margin-left: 2rem;
+  margin-top: 1rem;
+}
+
+#community-comments .comment-feed .square-container {
+  display: flex;
+  margin-left: 1rem;
+}

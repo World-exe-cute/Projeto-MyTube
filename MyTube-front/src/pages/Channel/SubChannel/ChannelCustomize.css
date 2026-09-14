@@ -1,0 +1,78 @@
+.side-bar {
+  overflow-x: hidden;
+}
+
+.customize {
+  background: #282828;
+}
+
+.customize > div:first-child {
+  margin: 2rem 3rem;
+  color: white;
+  font-size: 2.5rem;
+  background: #282828;
+  top: 57px;
+}
+
+.customize > .div-options.scroll {
+  margin: 4rem;
+}
+
+.side-bar .customize-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 1rem;
+  position: sticky;
+  top: 0;
+  left: 0;
+  background: #282828;
+  z-index: 6;
+  border-bottom: 1px solid gray;
+}
+
+.side-bar .customize-options .button-box.active a {
+  color: white;
+}
+
+.side-bar .customize-options.scroll {
+  position: sticky;
+}
+
+.side-bar .customize-options a.active::after {
+  content: "";
+  position: absolute;
+  left: calc(var(--option-border-left) * 1px);
+  bottom: 0;
+  box-shadow: 0px 2px 0px white;
+  width: calc(var(--option-border-width) * 1px);
+  height: 2px;
+  background: white;
+}
+
+.side-bar .customize-options div:first-child {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 3rem;
+  width: max-content;
+}
+
+.side-bar .customize-options div:first-child a {
+  all: unset;
+  color: white;
+  width: max-content;
+  margin: 0rem 1.5rem;
+  font-size: 1.6rem;
+}
+
+.side-bar .customize-options > div:last-child {
+  display: flex;
+  justify-self: flex-end;
+  margin-right: 3rem;
+}
+
+.side-bar .customize-options div:last-child a {
+  margin: 0.5rem;
+  font-size: 1.6rem;
+  text-decoration: none;
+}
