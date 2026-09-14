@@ -1,0 +1,17 @@
+.like-button {
+  all: unset;
+  display: inline-flex;
+  padding: 1rem 7px 1rem 1rem;
+}
+
+.like-button div {
+  padding-top: 0.1rem;
+  padding-right: 0.5rem;
+  font-size: 1.8rem;
+  align-self: center;
+}
+
+.like-button.active div i {
+  color: rgb(60, 176, 253);
+  transition: 0.5s;
+}

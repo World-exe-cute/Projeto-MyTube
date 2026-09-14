@@ -1,0 +1,50 @@
+.feed-display {
+  display: flex;
+}
+
+.commentFeed > .userId {
+  display: flex;
+  margin: 0 2rem;
+}
+
+.commentFeed > .comment {
+  margin-left: 2rem;
+  margin-top: 1rem;
+}
+
+.commentFeed > .comment > p {
+  all: unset;
+  font-size: 1.5rem;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+.commentFeed > .userId > div:first-child {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.commentFeed > .userId > div:last-child {
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.commentFeed > div:last-child {
+  display: flex;
+}
+
+.commentFeed > div:last-child > i {
+  border-radius: 25px;
+  margin: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.commentFeed > div:last-child > div {
+  margin: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  align-content: center;
+}

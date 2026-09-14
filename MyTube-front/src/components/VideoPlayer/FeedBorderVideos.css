@@ -1,0 +1,156 @@
+.video-border-container {
+  display: flex;
+  margin: 1rem 0;
+}
+
+.video-border-container > div:first-child {
+  height: 90px;
+  width: 150px;
+  border-radius: 10px;
+}
+
+.video-border-container > div:first-child > img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.video-border-container > div:last-child {
+  display: flex;
+  margin: 0.5rem 1rem 0 1rem;
+  width: 64%;
+}
+
+.video-border-container .profile-image {
+  width: 45px;
+  height: 45px;
+  border-radius: 25px;
+  margin-right: 1rem;
+}
+
+.video-border-container .profile-image > img {
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+}
+
+.video-border-container .title {
+  font-size: 1.7rem;
+  margin-bottom: 0.7rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+.video-border-container .author {
+  font-size: 1.2rem;
+  margin-bottom: 0.7rem;
+}
+
+.video-border-container .info-box {
+  display: inline-flex;
+}
+
+.video-border-container .views {
+  margin-right: 1rem;
+}
+
+.video-border-container .view-espace {
+  margin: 0 1rem;
+}
+
+.video-border-container.like {
+  display: flex;
+  margin: 1rem 0;
+}
+
+.video-border-container.like > div:first-child {
+  height: 120px;
+  width: 200px;
+  border-radius: 10px;
+}
+
+.video-border-container.like .title {
+  font-size: 2.3rem;
+  margin-bottom: 0.7rem;
+}
+
+.video-border-container.like .author {
+  font-size: 1.7rem;
+  margin-bottom: 0.7rem;
+}
+
+.video-border-container.search {
+  display: flex;
+  margin: 2rem 0;
+}
+
+.video-border-container.search .profile-image {
+  width: 45px;
+  height: 45px;
+  border-radius: 25px;
+  margin: 1rem 0rem;
+  display: flex;
+  align-items: center;
+}
+
+.video-border-container.search .profile-image:hover > div {
+  color: white;
+}
+
+.video-border-container.search .profile-image > div {
+  font-size: 1.5rem;
+  color: gray;
+}
+
+.video-border-container.search img {
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+}
+
+.video-border-container.search > div:first-child {
+  height: 200px;
+  width: 380px;
+  border-radius: 10px;
+}
+
+.video-border-container.search .title {
+  font-size: 2.5rem;
+  margin-bottom: 0.7rem;
+}
+
+.video-border-container.search .author {
+  font-size: 2rem;
+  padding-left: 1rem;
+  margin-bottom: 0.7rem;
+}
+
+.video-border-container.search .info-box {
+  font-size: 1.2rem;
+  color: gray;
+}
+
+.video-border-container.search .description {
+  color: gray;
+  font-size: 1.5rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+.video-border-container.search .default {
+  padding: 0 1.5rem;
+  height: 45px;
+  border-radius: 50%;
+  align-content: center;
+  background: orange;
+}
+
+.video-border-container.search .default > div {
+  font-size: 1.7rem;
+}

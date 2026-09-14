@@ -1,0 +1,135 @@
+.scribe,
+.subScribe {
+  display: inline-flex;
+  font-size: 1.6rem;
+  align-items: center;
+  position: relative;
+  background: color-mix(
+    in srgb,
+    var(--view-mode-shadow),
+    var(--view-mode-color) 90%
+  );
+  color: var(--view-mode);
+  border-radius: 20px;
+  animation: userScribe 1s linear;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.subScribe {
+  display: inline-flex;
+  font-size: 1.6rem;
+  position: relative;
+  padding: 0rem 1rem;
+  align-items: center;
+  margin-right: 1rem;
+  color: var(--view-mode);
+  background: color-mix(
+    in srgb,
+    var(--view-mode-shadow),
+    var(--view-mode-color) 90%
+  );
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.scribe:hover,
+.subScribe:hover {
+  background: color-mix(
+    in srgb,
+    var(--view-mode-shadow),
+    var(--view-mode-color) 60%
+  );
+}
+
+@keyframes userScribe {
+  0% {
+    pointer-events: none;
+    background: color-mix(
+      in srgb,
+      var(--view-mode-shadow),
+      var(--view-mode-color) 90%
+    );
+  }
+  50% {
+    pointer-events: none;
+    background: radial-gradient(
+      circle,
+      rgba(255, 185, 232, 0.7),
+      color-mix(in srgb, var(--view-mode-shadow), var(--view-mode-color) 90%)
+    );
+  }
+  100% {
+    pointer-events: none;
+    background: color-mix(
+      in srgb,
+      var(--view-mode-shadow),
+      var(--view-mode-color) 90%
+    );
+  }
+}
+
+.scribe.check {
+  border-radius: 0;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.scribe > div {
+  display: inline-flex;
+  padding: 1rem 1rem;
+  cursor: pointer;
+}
+
+.scribe > div:hover {
+  border-radius: 20px;
+}
+
+.scribe.check > div:last-child:hover {
+  border-radius: 0;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.scribe.check > div:first-child:hover {
+  border-radius: 0 !important;
+  border-top-left-radius: 20px !important;
+  border-top-right-radius: 20px !important;
+}
+
+.scribe > div > i:first-child {
+  padding-right: 5px;
+  margin: 0 1.1rem;
+}
+
+.scribe > div > i:last-child {
+  padding-left: 5px;
+}
+
+.subScribe > div {
+  padding: 1rem 0rem;
+}
+
+.scribe > .sub-more-options {
+  display: none;
+  position: absolute;
+  background: color-mix(
+    in srgb,
+    var(--view-mode-shadow),
+    var(--view-mode-color) 90%
+  );
+  margin-top: 66px;
+  margin-left: 0px;
+  padding: 1rem;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  z-index: 5000;
+}
+
+.scribe.check > .sub-more-options {
+  display: inline-flex;
+}
+
+.scribe > .sub-more-options > i {
+  margin-left: 0.5rem;
+}

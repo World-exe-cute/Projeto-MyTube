@@ -1,0 +1,42 @@
+.descriptionBar {
+  margin-top: 1rem;
+  background: var(--view-mode-shadow);
+  border-radius: 10px;
+  font-size: 1.5rem;
+  min-width: 0;
+}
+
+.descriptionBar .description {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  line-clamp: 4;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+.descriptionBar .description > a:hover {
+  color: rgb(10, 175, 252);
+}
+
+.descriptionBar .description.show-more {
+  display: block;
+  -webkit-line-clamp: unset;
+  line-clamp: unset;
+  -webkit-box-orient: unset;
+  overflow: visible;
+}
+
+.descriptionBar p {
+  all: unset;
+}
+
+.descriptionBar > div:first-child {
+  display: flex;
+}
+
+.descriptionBar div {
+  padding: 5px;
+}

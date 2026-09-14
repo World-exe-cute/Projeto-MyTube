@@ -1,0 +1,28 @@
+.perfil-box {
+  width: 45px;
+  height: 45px;
+  overflow: hidden;
+  border-radius: 50%;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.perfil-box img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.perfil-box > .default {
+  background: orange;
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  align-content: center;
+}
+
+.perfil-box > .default > div {
+  justify-self: center;
+  font-size: 2rem;
+}

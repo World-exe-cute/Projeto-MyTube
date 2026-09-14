@@ -1,0 +1,106 @@
+#containerView.dark .comments-box {
+  color: var(--view-mode-color);
+  margin: 1rem;
+}
+
+#containerView.white .comments-box {
+  color: black;
+  margin: 1rem;
+}
+
+.comments-box > div:first-child,
+.comments-box > div:first-child > div {
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.comments-box > div:first-child i {
+  margin-right: 5px;
+}
+
+.comments-box > div:first-child > div:first-child {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-right: 3rem;
+}
+
+.comments-box > div:first-child {
+  margin: 2rem 0rem;
+}
+
+.comments-box .insert-comment > div > a {
+  width: 4rem;
+  height: 4rem;
+}
+
+.comments-box .insert-comment textarea {
+  border: 0;
+  resize: none;
+  overflow: hidden;
+  min-height: 10px;
+  background: var(--view-mode);
+  color: var(--view-mode-color);
+  width: 100%;
+}
+
+.comments-box .insert-comment textarea:focus {
+  outline: none;
+}
+
+.comments-box .insert-comment .before-border-bottom {
+  margin-left: 1rem;
+  width: 94%;
+  border-bottom: 1px solid white;
+  position: relative;
+}
+
+.comments-box .insert-comment .before-border-bottom::before {
+  content: "";
+  border-bottom: 2px solid white;
+  width: 0%;
+  transition: 0.7s;
+  position: absolute;
+  bottom: 0;
+  left: 44%;
+}
+
+.comments-box .insert-comment .before-border-bottom:focus-within::before {
+  width: 100%;
+  left: 0;
+  transition: 0.7s;
+}
+
+.comments-box .insert-comment .more-options {
+  width: 100%;
+}
+
+.comments-box .insert-comment > div {
+  display: flex;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+
+.comments-box .order-box {
+  position: relative;
+}
+
+.comments-box .order-box .option-hidden {
+  position: absolute;
+  background: var(--view-mode-shadow);
+  padding: 1rem 0;
+  top: 3rem;
+  z-index: 5;
+  border-radius: 15px;
+}
+
+.comments-box .order-box .option-hidden > div {
+  padding: 1rem;
+}
+
+.comments-box .order-box .option-hidden > div:hover {
+  cursor: pointer;
+  background: var(--view-mode-color);
+  filter: brightness(0.2);
+  color: var(--view-mode);
+}

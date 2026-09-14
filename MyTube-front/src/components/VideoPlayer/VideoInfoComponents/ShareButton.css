@@ -1,0 +1,39 @@
+.share-button {
+  display: inline-flex;
+  align-items: center;
+  font-size: 1.5rem;
+  align-self: center;
+  align-content: center;
+  align-items: center;
+  border: 1px solid gray;
+  padding: 1rem;
+  border-radius: 25px;
+  background: var(--view-mode-shadow);
+  cursor: pointer;
+  position: relative;
+}
+
+.share-button > div {
+  padding: 0rem 3px;
+}
+
+.share-button::before {
+  content: "Link copiado!";
+  background: white;
+  position: absolute;
+  border: 1px solid rgb(60, 176, 253);
+  color: black;
+  margin-bottom: 1%;
+  transform: translateX(13%) translateY(1%);
+  border-radius: 25px;
+  padding: 3px;
+  transition: 0s;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.share-button.active::before {
+  visibility: visible;
+  transform: translateX(13%) translateY(-100%);
+  transition: 1s;
+}

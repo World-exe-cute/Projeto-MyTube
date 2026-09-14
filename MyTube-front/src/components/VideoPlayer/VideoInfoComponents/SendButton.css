@@ -1,0 +1,25 @@
+.send-container {
+  display: flex;
+  justify-content: end;
+}
+
+.send-container > div {
+  padding: 7px 20px;
+  font-size: 1.5rem;
+  border-radius: 25px;
+  margin: 0 0.5rem;
+}
+
+.send-container > .cancel:hover {
+  background: rgb(87, 86, 86);
+}
+
+.send-container > .send {
+  background: rgb(39, 39, 39);
+  color: gray;
+}
+
+.send-container > .send.check {
+  background: rgb(36, 145, 247);
+  color: black;
+}
