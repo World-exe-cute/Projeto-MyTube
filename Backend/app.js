@@ -6,7 +6,7 @@ const path = require("path");
 const cors = require("cors");
 const session = require("express-session");
 
-const port = process.env.PORT;
+const port = process.env.PORT || 5000;
 const code = process.env.JWT_SECRET;
 
 const app = express();
