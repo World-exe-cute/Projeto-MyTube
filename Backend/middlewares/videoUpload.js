@@ -83,10 +83,16 @@ const fileThumb = (req, res, next) => {
     });
 };
 
+const deleteFile = (filePath) => {
+  if (fs.existsSync(filePath)) {
+    fs.unlinkSync(filePath);
+  }
+};
+
 const videoUpload = multer({
   storage: videoStorage,
   fileFilter: fileValidation,
   limits: { fileSize: 20 * 1024 * 1024 }, //20mb
 });
 
-module.exports = { videoUpload, fileOversize, fileThumb };
+module.exports = { videoUpload, fileOversize, fileThumb, deleteFile };

@@ -3,6 +3,9 @@ const Video = require("../models/Video");
 const User = require("../models/User");
 const path = require("path");
 const jwt = require("jsonwebtoken");
+const cloudinary = require("../config/cloudinary");
+const fs = require("fs");
+const { deleteFile } = require("../middlewares/videoUpload");
 const { formatDistanceToNow, formatDistanceToNowStrict } = require("date-fns");
 const { ptBR } = require("date-fns/locale");
 
@@ -93,14 +96,89 @@ const videoView = async (req, res) => {
 };
 
 const insertVideo = async (req, res) => {
-  console.log(req.body.size);
-  const token = req.cookies.token;
+  //console.log(req.body.size);
+  try {
+    const token = req.cookies.token;
 
-  const tokenDecode = jwt.verify(token, jwtSecret);
+    const tokenDecode = jwt.verify(token, jwtSecret);
 
-  const url = "http://localhost:5000/api/videos/check-video";
+    //const url = "http://localhost:5000/api/videos/check-video";
 
-  const newVideo = await Video.create({
+    const videoPath = req.file.path;
+    const thumbPath = path.join(path.dirname(videoPath), req.thumb);
+
+    const videoResult = await cloudinary.uploader.upload(videoPath, {
+      folder: `MyTube/videos/${tokenDecode.id}`,
+      resource_type: "video",
+    });
+
+    const thumbResult = await cloudinary.uploader.upload(thumbPath, {
+      folder: `MyTube/thumbnails/${tokenDecode.id}`,
+      resource_type: "image",
+    });
+
+    const newVideo = await Video.create({
+      videoUrl: {
+        hash: videoResult.secure_url,
+        thumb: thumbResult.secure_url,
+        type: req.fileType,
+        name: req.hash,
+      },
+      videoName: req.fileName,
+      videoSize: req.file.size,
+      public: req.body.public,
+      userId: tokenDecode.id,
+      title: req.fileName,
+      description: "",
+      originalCreator: "",
+      videoTag: [],
+      dislike: [],
+      like: [],
+      view: 0,
+      comments: [],
+    });
+
+    if (!newVideo) {
+      deleteFile(videoPath);
+      deleteFile(thumbResult);
+
+      req.body = {};
+
+      return res
+        .status(422)
+        .json({ errors: "Houve um erro, tente novamente mais tarde." });
+    }
+
+    deleteFile(videoPath);
+    deleteFile(thumbResult);
+
+    return res.status(201).json({
+      success: true,
+      videoInfo: {
+        hash: videoResult.secure_url,
+        thumb: thumbResult.secure_url,
+        name: req.fileName,
+      },
+      next: true,
+    });
+  } catch (error) {
+    console.log(error);
+    if (req.file?.path) {
+      deleteFile(req.file.path);
+
+      if (req.thumb) {
+        const thumbPath = path.join(path.dirname(req.file.path), req.thumb);
+
+        deleteFile(thumbPath);
+      }
+    }
+
+    return res.status(500).json({
+      errors: "Erro ao enviar o video.",
+    });
+  }
+
+  /*const newVideo = await Video.create({
     videoUrl: {
       hash: `${req.onlyHash}`,
       thumb: `${req.thumb}`,
@@ -136,7 +214,7 @@ const insertVideo = async (req, res) => {
       name: `${req.fileName}.${req.fileType}`,
     },
     next: true,
-  });
+  });*/
 };
 
 const infoVideo = async (req, res) => {
@@ -160,16 +238,11 @@ const getVideos = async (req, res) => {
 
   const video = await Video.findOne({
     "videoUrl.hash": hashUrl,
-  }).select("videoUrl.name userId");
+  }).select("videoUrl");
 
   if (!video) return res.status(404).json({ errors: "Video não encontrado." });
 
-  const filePath = path.join(
-    __dirname,
-    `../uploads/profileVideos/${video.userId}/${video.videoUrl.name}`,
-  );
-
-  return res.sendFile(path.resolve(filePath));
+  return res.redirect(video.videoUrl.hash);
 };
 
 const getUserVideos = async (req, res) => {

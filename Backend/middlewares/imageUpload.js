@@ -1,6 +1,6 @@
-const { v4: uuidv4 } = require("uuid");
+//const { v4: uuidv4 } = require("uuid");
 const multer = require("multer");
-const path = require("path");
+/*const path = require("path");
 const fs = require("fs");
 const jwt = require("jsonwebtoken");
 
@@ -35,7 +35,35 @@ const imageStorage = multer.diskStorage({
     const baseName = path.basename(file.originalname, ext);
     cb(null, `${baseName}.${fileType}`);
   },
-});
+});*/
+
+const uploadToCloudinary = (file, userId) => {
+  return new Promise((resolve, reject) => {
+    const fileName = path.basename(
+      file.originalname,
+      path.extname(file.originalname),
+    );
+
+    const uploadStream = cloudinary.uploader.upload_stream(
+      {
+        folder: `MyTube/profilePhotos/${userId}`,
+        public_id: fileName,
+        resource_type: "image",
+      },
+      (error, result) => {
+        if (error) {
+          reject(error);
+        } else {
+          resolve(result);
+        }
+      },
+    );
+
+    uploadStream.end(file.buffer);
+  });
+};
+
+const imageStorage = multer.memoryStorage();
 
 const fileValidation = (req, file, cb) => {
   const types = ["image/jpeg", "image/png", "image/webp"];
@@ -53,4 +81,4 @@ const imageUpload = multer({
   limits: { fileSize: 10 * 1024 * 1024 },
 });
 
-module.exports = { imageUpload };
+module.exports = { imageUpload, uploadToCloudinary };

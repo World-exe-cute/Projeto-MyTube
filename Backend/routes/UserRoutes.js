@@ -11,7 +11,7 @@ const {
   update,
   getUserById,
   channelCustom,
-  getUserPhoto,
+  //getUserPhoto,
   getUserTag,
   checkUserToken,
   getHistory,
@@ -56,7 +56,7 @@ router.post("/logout", logout);
 router.post("/getHistory/:id", authGuard, getHistory);
 
 router.get("/profile/:id", getUserById);
-router.get("/check-image/:hash", getUserPhoto);
+//router.get("/check-image/:hash", getUserPhoto);
 router.get("/check-tag/:id", getUserTag);
 router.get("/check-token", checkUserToken);
 router.get("/getLikeVideos", authGuard, getLikeVideos);

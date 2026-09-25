@@ -1,8 +1,10 @@
 const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
-const crypto = require("crypto");
+//const crypto = require("crypto");
+//const cloudinary = require("../../config/cloudinary");
+const { uploadToCloudinary } = require("../../middlewares/imageUpload");
 const path = require("path");
-const fs = require("fs");
+//const fs = require("fs");
 const { formatDistanceToNowStrict } = require("date-fns");
 const { ptBR } = require("date-fns/locale");
 
@@ -12,7 +14,7 @@ const Video = require("../../models/Video");
 
 const jwtSecret = process.env.JWT_SECRET;
 
-const getUserPhoto = async (req, res) => {
+/*const getUserPhoto = async (req, res) => {
   const hash = req.params.hash;
   const fullURL = `http://localhost:5000/api/users/check-image/${hash}`;
 
@@ -52,7 +54,7 @@ const getUserPhoto = async (req, res) => {
   });
 
   return res.sendFile(path.resolve(filePath));
-};
+};*/
 
 const getUserById = async (req, res) => {
   const { id } = req.params;
@@ -79,8 +81,11 @@ const channelCustom = async (req, res) => {
   const tokenDecode = jwt.verify(token, jwtSecret);
 
   const user = await User.findById(
-    new mongoose.Types.ObjectId(tokenDecode),
+    new mongoose.Types.ObjectId(tokenDecode.id),
   ).select("name idTag pronouns description");
+
+  if (!user) return res.status(404).json({ errors: "usuario nao encontrado." });
+
   if (req.body.name) {
     user.name = req.body.name;
   }
@@ -99,12 +104,55 @@ const channelCustom = async (req, res) => {
     user.description = req.body.description;
   }
 
-  if (req.files[0]?.filename) {
-    const folder = path.join("uploads/profilePhotos", tokenDecode.id);
+  if (req.files?.length > 0) {
+    const photoObj = {};
+
+    for (const file of req.files) {
+      const fileName = path.basename(
+        file.originalname,
+        path.extname(file.originalname),
+      );
+
+      const result = await uploadToCloudinary(file, tokenDecode.id);
+
+      switch (fileName) {
+        case "photo":
+          photoObj.photo = {
+            hash: result.secure_url,
+            name: file.originalname,
+          };
+          break;
+
+        case "pc":
+          photoObj.pc = {
+            hash: result.secure_url,
+            name: file.originalname,
+          };
+          break;
+
+        case "tv":
+          photoObj.tv = {
+            hash: result.secure_url,
+            name: file.originalname,
+          };
+          break;
+
+        case "cel":
+          photoObj.cel = {
+            hash: result.secure_url,
+            name: file.originalname,
+          };
+          break;
+      }
+    }
+
+    user.photoUrl = photoObj;
+
+    /*const folder = path.join("uploads/profilePhotos", tokenDecode.id);
     const files = fs.readdirSync(folder);
     const photoObject = {};
 
-    const url = "http://localhost:5000/api/users/check-image";
+    const url = "https://projeto-mytube.onrender.com/api/users/check-image";
 
     files.forEach(async (arq) => {
       const filePhoto = path.join(folder, arq);
@@ -142,7 +190,7 @@ const channelCustom = async (req, res) => {
       }
     });
 
-    user.photoUrl = photoObject;
+    user.photoUrl = photoObject;*/
   }
 
   await user.save();
