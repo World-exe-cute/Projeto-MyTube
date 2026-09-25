@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, useContext } from "react";
 import "./HomeNav.css";
+import { useNavigate } from "react-router-dom";
 import { Channel } from "../../App";
 import { useDispatch } from "react-redux";
 import { authThunk } from "../../slices/authSlice";
@@ -10,6 +11,7 @@ import ObserverEffect from "../../utils/ObserverEffect";
 
 export default function HomeNav({ global }) {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { tagInfo } = useContext(Channel);
   const [allVideos, setAllVideos] = useState([]);
   const [cancelObserver, setCancelObserver] = useState(false);
@@ -73,8 +75,12 @@ export default function HomeNav({ global }) {
   });
 
   return (
-    <div ref={feedRef} id="home-nav" className={`${global ? "active" : ""}`}>
-      {allVideos.length !== 0 &&
+    <div
+      ref={feedRef}
+      id="home-nav"
+      className={`${global ? "active" : ""} ${allVideos?.length !== 0 ? "" : "empty"}`}
+    >
+      {allVideos.length !== 0 ? (
         allVideos.map((item, i) => (
           <div
             key={item.videoUrl.hash}
@@ -82,7 +88,19 @@ export default function HomeNav({ global }) {
           >
             <FeedVideos index={i} videos={item} />
           </div>
-        ))}
+        ))
+      ) : (
+        <div className="empty-box">
+          <h2>Nenhum video disponivel</h2>
+          <button
+            onClick={() => {
+              navigate("/login");
+            }}
+          >
+            Poste um!
+          </button>
+        </div>
+      )}
     </div>
   );
 }

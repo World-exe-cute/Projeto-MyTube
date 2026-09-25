@@ -31,6 +31,37 @@
   border-radius: 10px;
 }
 
+#home-nav.empty {
+  display: flex;
+}
+
+#home-nav .empty-box {
+  margin: auto;
+  margin-top: 15rem;
+  color: var(--view-mode-color);
+}
+
+#home-nav .empty-box > h2 {
+  font-size: 3rem;
+}
+
+#home-nav .empty-box > button {
+  font-size: 2rem;
+  margin: auto;
+  border-radius: 25px;
+  background: var(--view-mode-shadow);
+  padding: 1rem 2rem;
+  cursor: pointer;
+}
+
+#home-nav .empty-box > button:hover {
+  background: color-mix(
+    in srgb,
+    var(--view-mode-shadow),
+    var(--view-mode-color) 5%
+  );
+}
+
 @media (max-width: 1440px) {
   #home-nav {
     grid-template-columns: repeat(3, 1fr);
