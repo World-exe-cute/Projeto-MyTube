@@ -548,7 +548,7 @@ const setTheater = async (req, res) => {
 module.exports = {
   getUserById,
   channelCustom,
-  getUserPhoto,
+  //getUserPhoto,
   getUserTag,
   getUserVideo,
   checkUserToken,
