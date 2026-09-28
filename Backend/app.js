@@ -11,11 +11,9 @@ const code = process.env.JWT_SECRET;
 
 const app = express();
 
-app.use(cookieParser());
+app.set("trust proxy", 1);
 
-//config JSON and form data response
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
 
 // solve CORS
 app.use(
@@ -40,6 +38,10 @@ app.use(
     cookie: { httpOnly: true, secure: true, sameSite: "none" }, // secure true quando o site estiver ativo com https
   }),
 );
+
+//config JSON and form data response
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
 //DB connection
 require("./config/db.js");
