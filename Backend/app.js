@@ -18,7 +18,15 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // solve CORS
-app.use(cors({ credentials: true, origin: "https://rodrigoleitedev2.com.br" }));
+app.use(
+  cors({
+    credentials: true,
+    origin: [
+      "https://rodrigoleitedev2.com.br",
+      "https://www.rodrigoleitedev2.com.br",
+    ],
+  }),
+);
 
 //upload directory
 app.use("/uploads", express.static(path.join(__dirname, "/uploads")));
@@ -29,7 +37,7 @@ app.use(
     secret: code,
     resave: false,
     saveUninitialized: false,
-    cookie: { secure: false }, // secure true quando o site estiver ativo com https
+    cookie: { httpOnly: true, secure: true, sameSite: "none" }, // secure true quando o site estiver ativo com https
   }),
 );
 
