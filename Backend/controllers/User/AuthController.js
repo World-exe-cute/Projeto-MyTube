@@ -405,7 +405,6 @@ const login = async (req, res, next) => {
       const password = req.body.password;
       const userEmail = req.session.email;
       const captchaToken = req.body.captchaToken;
-      console.log("token: ", captchaToken);
       let tokenResponse;
       try {
         tokenResponse = await fetch(
@@ -423,7 +422,7 @@ const login = async (req, res, next) => {
         );
       } catch (err) {
         return res
-          .status(418)
+          .status(500)
           .json({ errors: "Não foi possivel validar o reCAPTCHA" });
       }
 
@@ -445,6 +444,9 @@ const login = async (req, res, next) => {
 
       if (password) {
         const user = await User.findOne({ email: userEmail });
+
+        if (!user)
+          return res.status(404).json({ errors: "Usuario nao encontrado." });
 
         if (!(await bcrypt.compare(password, user.password))) {
           res.status(422).json({
