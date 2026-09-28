@@ -392,6 +392,8 @@ const login = async (req, res, next) => {
         }
 
         req.session.email = email;
+        console.log("EMAIL SALVO NA SESSÃO:", req.session.email);
+        console.log("SESSION ID:", req.sessionID);
         req.body = {};
         res.status(200).json({ success: true, next: true });
         return;
@@ -402,6 +404,8 @@ const login = async (req, res, next) => {
         return;
       }
     case "password":
+      console.log("EMAIL RECUPERADO:", req.session.email);
+      console.log("SESSION ID:", req.sessionID);
       const password = req.body.password;
       const userEmail = req.session.email;
       const captchaToken = req.body.captchaToken;
