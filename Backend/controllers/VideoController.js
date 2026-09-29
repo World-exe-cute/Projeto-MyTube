@@ -296,12 +296,12 @@ const checkVideoThumb = async (req, res) => {
   if (!video)
     return res.status(404).json({ errors: "Videos não encontrados." });
 
-  const filePath = path.join(
+  /*const filePath = path.join(
     __dirname,
     `../uploads/profileVideos/${video.userId}/${video.videoUrl.thumb}`,
-  );
+  );*/
 
-  return res.sendFile(path.resolve(filePath));
+  return res.redirect(video.videoUrl.thumb);
 };
 
 const subScribeVideo = async (req, res) => {
