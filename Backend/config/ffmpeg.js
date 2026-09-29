@@ -1,10 +1,6 @@
 const ffmpeg = require("fluent-ffmpeg");
-const ffmpegPath =
-  "C:/Backup/ProjetoCurriculo/YouTube/my-tube/backend/programs/ffmpeg/bin/ffmpeg.exe";
-const ffprobePath =
-  "C:/Backup/ProjetoCurriculo/YouTube/my-tube/backend/programs/ffmpeg/bin/ffprobe.exe";
 
-ffmpeg.setFfmpegPath(ffmpegPath);
-ffmpeg.setFfprobePath(ffprobePath);
+ffmpeg.setFfmpegPath("/usr/bin/ffmpeg");
+ffmpeg.setFfprobePath("/usr/bin/ffprobe");
 
 module.exports = ffmpeg;
