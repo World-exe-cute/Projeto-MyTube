@@ -1,16 +1,24 @@
 const multer = require("multer");
 const path = require("path");
 const fs = require("fs");
-const jwt = require("jsonwebtoken");
+//const jwt = require("jsonwebtoken");
 const crypto = require("crypto");
 const { v4: uuidv4 } = require("uuid");
 const ffmpeg = require("../config/ffmpeg");
 
-const jwtSecret = process.env.JWT_SECRET;
+//const jwtSecret = process.env.JWT_SECRET;
+
+const temp = "/tmp/MyTube";
+
+if (!fs.existsSync(temp)) {
+  fs.mkdirSync(temp, { recursive: true });
+}
 
 const videoStorage = multer.diskStorage({
   destination: function (req, file, cb) {
-    const token = req.cookies.token;
+    cb(null, temp);
+
+    /*const token = req.cookies.token;
     const tokenDecode = jwt.verify(token, jwtSecret);
 
     let folder = "";
@@ -23,7 +31,7 @@ const videoStorage = multer.diskStorage({
       fs.mkdirSync(`./uploads/${folder}/${tokenDecode.id}`);
     }
 
-    cb(null, `uploads/${folder}/${tokenDecode.id}/`); //aqui
+    cb(null, `uploads/${folder}/${tokenDecode.id}/`); */
   },
   filename: (req, file, cb) => {
     const fileType = file.mimetype.split("/")[1];
