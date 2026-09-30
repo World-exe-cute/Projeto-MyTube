@@ -238,11 +238,13 @@ const getVideos = async (req, res) => {
 
   const video = await Video.findOne({
     "videoUrl.hash": hashUrl,
-  }).select("videoUrl");
+  }).select("videoUrl.hash userId");
 
   if (!video) return res.status(404).json({ errors: "Video não encontrado." });
 
-  return res.redirect(video.videoUrl.hash);
+  const fullUrl = `https://res.cloudinary.com/dkg4uwof9/image/upload/v1790787726/MyTube/videos/${video.userId}/${video.videoUrl.hash}`;
+
+  return res.redirect(fullUrl);
 };
 
 const getUserVideos = async (req, res) => {
