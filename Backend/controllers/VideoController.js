@@ -300,7 +300,7 @@ const checkVideoThumb = async (req, res) => {
     __dirname,
     `../uploads/profileVideos/${video.userId}/${video.videoUrl.thumb}`,
   );*/
-  const fullUrl = `https://res.cloudinary.com/dkg4uwof9/image/upload/v1790787726/MyTube/thumbnail/${video.userId}/${video.videoUrl.thumb}`;
+  const fullUrl = `https://res.cloudinary.com/dkg4uwof9/image/upload/v1790787726/MyTube/thumbnails/${video.userId}/${video.videoUrl.thumb}`;
 
   return res.redirect(fullUrl);
 };
