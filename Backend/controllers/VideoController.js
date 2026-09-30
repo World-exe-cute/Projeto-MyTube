@@ -155,8 +155,8 @@ const insertVideo = async (req, res) => {
     return res.status(201).json({
       success: true,
       videoInfo: {
-        hash: videoResult.secure_url,
-        thumb: thumbResult.secure_url,
+        hash: videoResult.secure_url.split("/").at(-1),
+        thumb: thumbResult.secure_url.split("/").at(-1),
         name: req.fileName,
       },
       next: true,
