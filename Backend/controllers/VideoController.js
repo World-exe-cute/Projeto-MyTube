@@ -242,7 +242,7 @@ const getVideos = async (req, res) => {
 
   if (!video) return res.status(404).json({ errors: "Video não encontrado." });
 
-  const fullUrl = `https://res.cloudinary.com/dkg4uwof9/image/upload/v1790787726/MyTube/videos/${video.userId}/${video.videoUrl.hash}`;
+  const fullUrl = `https://res.cloudinary.com/dkg4uwof9/video/upload/v1790787726/MyTube/videos/${video.userId}/${video.videoUrl.hash}`;
 
   return res.redirect(fullUrl);
 };
