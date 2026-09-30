@@ -119,8 +119,8 @@ const insertVideo = async (req, res) => {
 
     const newVideo = await Video.create({
       videoUrl: {
-        hash: videoResult.secure_url,
-        thumb: thumbResult.secure_url,
+        hash: videoResult.secure_url.split("/").at(-1),
+        thumb: thumbResult.secure_url.split("/").at(-1),
         type: req.fileType,
         name: req.hash,
       },
@@ -300,8 +300,9 @@ const checkVideoThumb = async (req, res) => {
     __dirname,
     `../uploads/profileVideos/${video.userId}/${video.videoUrl.thumb}`,
   );*/
+  const fullUrl = `https://res.cloudinary.com/dkg4uwof9/image/upload/v1790787726/MyTube/thumbnail/${video.userId}/${video.videoUrl.thumb}`;
 
-  return res.redirect(video.videoUrl.thumb);
+  return res.redirect(fullUrl);
 };
 
 const subScribeVideo = async (req, res) => {
