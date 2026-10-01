@@ -33,7 +33,7 @@ const videoView = async (req, res) => {
     { new: true },
   )
     .select(
-      "-_id -comments -videoUrl.thumb -videoUrl.video -videoUrl.name -videoUrl.type -videoUrl.name -videoSize -videoName -updatedAt",
+      "-_id -comments -videoUrl.thumb -videoUrl.video -videoUrl.name -videoUrl.name -videoSize -videoName -updatedAt",
     )
     .populate("userId", "photoUrl.photo like myInscription name idTag")
     .populate("comments.userId", "name photoUrl.photo")
