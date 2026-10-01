@@ -549,29 +549,31 @@ const deleteVideos = async (req, res) => {
 
   const videoInfo = await Video.find({
     "videoUrl.hash": { $in: videosHash },
-  }).select("videoUrl.thumb videoUrl.hash userId");
+  }).select("videoUrl userId");
 
   if (!videoInfo)
     return res
       .status(404)
       .json({ errors: "nao foi possivel encontrar os videos." });
 
-  const thumbUrl = `https://res.cloudinary.com/dkg4uwof9/image/upload/v1790787726/MyTube/thumbnails/${videoInfo.userId}/${videoInfo.videoUrl.thumb}`;
-  const videoUrl = `https://res.cloudinary.com/dkg4uwof9/video/upload/v1790787726/MyTube/videos/${videoInfo.userId}/${videoInfo.videoUrl.hash}`;
+  for (const info of videoInfo) {
+    const thumbUrl = `https://res.cloudinary.com/dkg4uwof9/image/upload/v1790787726/MyTube/thumbnails/${info.userId}/${info.videoUrl.thumb}`;
+    const videoUrl = `https://res.cloudinary.com/dkg4uwof9/video/upload/v1790787726/MyTube/videos/${info.userId}/${info.videoUrl.hash}`;
 
-  try {
-    await cloudinary.uploader.destroy(videoUrl, {
-      resource_type: "video",
-    });
+    try {
+      await cloudinary.uploader.destroy(videoUrl, {
+        resource_type: "video",
+      });
 
-    await cloudinary.uploader.destroy(thumbUrl, {
-      resource_type: "image",
-    });
-  } catch (error) {
-    console.log(error);
-    return res
-      .status(404)
-      .json({ errors: "Não foi possivel remover os arquivos." });
+      await cloudinary.uploader.destroy(thumbUrl, {
+        resource_type: "image",
+      });
+    } catch (error) {
+      console.log(error);
+      return res
+        .status(404)
+        .json({ errors: "Não foi possivel remover os arquivos." });
+    }
   }
 
   const video = await Video.deleteMany({
