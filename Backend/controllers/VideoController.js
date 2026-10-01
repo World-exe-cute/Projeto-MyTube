@@ -557,8 +557,8 @@ const deleteVideos = async (req, res) => {
       .json({ errors: "nao foi possivel encontrar os videos." });
 
   for (const info of videoInfo) {
-    const thumbUrl = `MyTube/thumbnails/${info.userId}/${info.videoUrl.thumb}`;
-    const videoUrl = `MyTube/videos/${info.userId}/${info.videoUrl.hash}`;
+    const thumbUrl = `MyTube/thumbnails/${info.userId}/${info.videoUrl.thumb.split(".").at(0)}`;
+    const videoUrl = `MyTube/videos/${info.userId}/${info.videoUrl.hash.split(".").at(0)}`;
 
     try {
       await cloudinary.uploader.destroy(videoUrl, {
