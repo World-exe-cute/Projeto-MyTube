@@ -5,6 +5,7 @@ const path = require("path");
 const jwt = require("jsonwebtoken");
 const cloudinary = require("../config/cloudinary");
 const fs = require("fs");
+const { randomUUID } = require("crypto");
 const { deleteFile } = require("../middlewares/videoUpload");
 const { formatDistanceToNow, formatDistanceToNowStrict } = require("date-fns");
 const { ptBR } = require("date-fns/locale");
@@ -32,7 +33,7 @@ const videoView = async (req, res) => {
     { new: true },
   )
     .select(
-      "-_id -comments -videoUrl.thumb -videoUrl.name -videoSize -videoName -updatedAt",
+      "-_id -comments -videoUrl.thumb -videoUrl.video -videoUrl.name -videoUrl.type -videoUrl.name -videoSize -videoName -updatedAt",
     )
     .populate("userId", "photoUrl.photo like myInscription name idTag")
     .populate("comments.userId", "name photoUrl.photo")
@@ -102,6 +103,8 @@ const insertVideo = async (req, res) => {
 
     const tokenDecode = jwt.verify(token, jwtSecret);
 
+    const hash = randomUUID();
+
     //const url = "http://localhost:5000/api/videos/check-video";
 
     const videoPath = req.file.path;
@@ -119,7 +122,8 @@ const insertVideo = async (req, res) => {
 
     const newVideo = await Video.create({
       videoUrl: {
-        hash: videoResult.secure_url.split("/").at(-1),
+        hash: hash,
+        video: videoResult.secure_url.split("/").at(-1),
         thumb: thumbResult.secure_url.split("/").at(-1),
         type: req.fileType,
         name: req.hash,
@@ -155,8 +159,9 @@ const insertVideo = async (req, res) => {
     return res.status(201).json({
       success: true,
       videoInfo: {
-        hash: videoResult.secure_url.split("/").at(-1),
-        thumb: thumbResult.secure_url.split("/").at(-1),
+        //colocar o hash AQUI e buscar apenas o hash no back, trazendo video e thumb.
+        hash: hash, //videoResult.secure_url.split("/").at(-1),
+        //thumb: thumbResult.secure_url.split("/").at(-1),
         name: req.fileName,
       },
       next: true,
@@ -238,11 +243,11 @@ const getVideos = async (req, res) => {
 
   const video = await Video.findOne({
     "videoUrl.hash": hashUrl,
-  }).select("videoUrl.hash userId");
+  }).select("videoUrl.video userId");
 
   if (!video) return res.status(404).json({ errors: "Video não encontrado." });
 
-  const fullUrl = `https://res.cloudinary.com/dkg4uwof9/video/upload/v1790787726/MyTube/videos/${video.userId}/${video.videoUrl.hash}`;
+  const fullUrl = `https://res.cloudinary.com/dkg4uwof9/video/upload/v1790787726/MyTube/videos/${video.userId}/${video.videoUrl.video}`;
 
   return res.redirect(fullUrl);
 };
@@ -302,6 +307,7 @@ const checkVideoThumb = async (req, res) => {
     __dirname,
     `../uploads/profileVideos/${video.userId}/${video.videoUrl.thumb}`,
   );*/
+
   const fullUrl = `https://res.cloudinary.com/dkg4uwof9/image/upload/v1790787726/MyTube/thumbnails/${video.userId}/${video.videoUrl.thumb}`;
 
   return res.redirect(fullUrl);
