@@ -549,7 +549,7 @@ const deleteVideos = async (req, res) => {
 
   const videoInfo = await Video.find({
     "videoUrl.hash": { $in: videosHash },
-  }).select("videoUrl userId");
+  }).select("videoUrl.thumb videoUrl.hash userId");
 
   if (!videoInfo)
     return res
