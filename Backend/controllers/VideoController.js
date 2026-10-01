@@ -547,6 +547,15 @@ const deleteVideos = async (req, res) => {
   if (videosHash.length === 0)
     return res.status(400).json({ errors: "Nenhum video para deletar." });
 
+  const videoInfo = await Video.find({
+    "videoUrl.hash": { $in: videosHash },
+  }).select("videoUrl userId");
+
+  if (!videoInfo)
+    return res
+      .status(404)
+      .json({ errors: "nao foi possivel encontrar os videos." });
+
   const video = await Video.deleteMany({
     userId: new mongoose.Types.ObjectId(tokenDecode.id),
     "videoUrl.hash": { $in: videosHash },
@@ -554,6 +563,17 @@ const deleteVideos = async (req, res) => {
 
   if (video.deletedCount === 0)
     return res.status(400).json({ errors: "Nenhum video foi deletado." });
+
+  const thumbUrl = `https://res.cloudinary.com/dkg4uwof9/image/upload/v1790787726/MyTube/thumbnails/${videoInfo.userId}/${videoInfo.videoUrl.thumb}`;
+  const videoUrl = `https://res.cloudinary.com/dkg4uwof9/video/upload/v1790787726/MyTube/videos/${videoInfo.userId}/${videoInfo.videoUrl.hash}`;
+
+  await cloudinary.uploader.destroy(videoUrl, {
+    resource_type: "video",
+  });
+
+  await cloudinary.uploader.destroy(thumbUrl, {
+    resource_type: "image",
+  });
 
   return res.status(200).json({ success: true });
 };
