@@ -1,6 +1,7 @@
 //const { v4: uuidv4 } = require("uuid");
 const multer = require("multer");
 const path = require("path");
+const cloudinary = require("cloudinary").v2;
 /*const fs = require("fs");
 const jwt = require("jsonwebtoken");
 
