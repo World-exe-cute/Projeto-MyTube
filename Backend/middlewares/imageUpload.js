@@ -1,7 +1,7 @@
 //const { v4: uuidv4 } = require("uuid");
 const multer = require("multer");
-/*const path = require("path");
-const fs = require("fs");
+const path = require("path");
+/*const fs = require("fs");
 const jwt = require("jsonwebtoken");
 
 const jwtSecret = process.env.JWT_SECRET;
