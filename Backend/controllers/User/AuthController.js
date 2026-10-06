@@ -495,8 +495,8 @@ const login = async (req, res, next) => {
 const logout = async (req, res) => {
   res.clearCookie("token", {
     httpOnly: true,
-    sameSite: "lax",
-    secure: false,
+    sameSite: "none",
+    secure: true,
   });
 
   return res.status(200).json({ success: true, next: true });
