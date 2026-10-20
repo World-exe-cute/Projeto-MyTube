@@ -2,7 +2,7 @@ const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 
 //services
-const { randomCode } = require("../../services/emailVerify");
+const { randomCode, emailTransporter } = require("../../services/emailVerify");
 
 //models
 const User = require("../../models/User");
@@ -151,6 +151,11 @@ const register = async (req, res, next) => {
             });
             return;
           }
+
+          const createEmail = await emailTransporter("register", code);
+
+          if (!createEmail)
+            return res.status(404).json({ error: "email não enviado." });
 
           req.body = {};
           res.status(200).json({ success: true, next: true });
