@@ -152,7 +152,7 @@ const register = async (req, res, next) => {
             return;
           }
 
-          const createEmail = await emailTransporter("register", code);
+          const createEmail = await emailTransporter(eMail, code);
 
           if (!createEmail)
             return res.status(404).json({ error: "email não enviado." });
