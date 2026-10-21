@@ -18,7 +18,7 @@ const emailTransporter = async (userEmail, code, userTag) => {
   let mailOptions;
   if (userEmail === "feedback") {
     mailOptions = {
-      from: "MyTube <onboarding@resend.dev>",
+      from: "MyTube <noreply@rodrigoleitedev2.com.br>",
       to: myEmail,
       subject: `----Feedback de: ${userTag}----`,
       html: `
@@ -35,7 +35,7 @@ const emailTransporter = async (userEmail, code, userTag) => {
     };
   } else {
     mailOptions = {
-      from: "MyTube <onboarding@resend.dev>",
+      from: "MyTube <noreply@rodrigoleitedev2.com.br>",
       to: userEmail,
       subject: "Confirmação de cadastro do MyTube :3",
       html: `
