@@ -1,22 +1,23 @@
 require("dotenv").config();
-const nodemailer = require("nodemailer");
+//const nodemailer = require("nodemailer");
 
 const myEmail = process.env.EMAIL_USER;
-const passEmail = process.env.EMAIL_PASS;
+const resend = new Resend(process.env.RESEND_KEY);
+//const passEmail = process.env.EMAIL_PASS;
 
-const transporter = nodemailer.createTransport({
+/*const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
     user: myEmail,
     pass: passEmail,
   },
-});
+});*/
 
 const emailTransporter = async (userEmail, code, userTag) => {
   let mailOptions;
   if (userEmail === "feedback") {
     mailOptions = {
-      from: myEmail,
+      from: "MyTube <onboarding@resend.dev>",
       to: myEmail,
       subject: `----Feedback de: ${userTag}----`,
       html: `
@@ -33,7 +34,7 @@ const emailTransporter = async (userEmail, code, userTag) => {
     };
   } else {
     mailOptions = {
-      from: myEmail,
+      from: "MyTube <onboarding@resend.dev>",
       to: userEmail,
       subject: "Confirmação de cadastro do MyTube :3",
       html: `
@@ -54,13 +55,25 @@ const emailTransporter = async (userEmail, code, userTag) => {
     };
   }
 
-  const check = await transporter.sendMail(mailOptions);
+  //const check = await transporter.sendMail(mailOptions);
+  try {
+    const { data, error } = await resend.emails.send(mailOptions);
 
-  if (check) {
+    if (error) {
+      console.error("Erro Resend: ", error);
+      return false;
+    }
+    return Boolean(data?.id);
+  } catch (error) {
+    console.error("Erro ao enviar o email: ", error.message);
+    return false;
+  }
+
+  /*if (check) {
     return true;
   } else {
     return false;
-  }
+  }*/
 };
 
 const randomCode = (max = 5) => {
