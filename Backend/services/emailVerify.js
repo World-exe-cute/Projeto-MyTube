@@ -1,4 +1,5 @@
 require("dotenv").config();
+const { Resend } = require("resend");
 //const nodemailer = require("nodemailer");
 
 const myEmail = process.env.EMAIL_USER;
