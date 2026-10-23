@@ -250,10 +250,10 @@ const searchVideos = async (req, res) => {
       .status(200)
       .json({ success: true, videos: [], lock: true, hash: [] });
 
-  for (let i = videos.length - 1; i > 0; i--) {
+  /*for (let i = videos.length - 1; i > 0; i--) {
     const random = Math.floor(Math.random() * (i + 1));
     [videos[i], videos[random]] = [videos[random], videos[i]];
-  }
+  }*/
 
   const newVideo = videos.map((video) => ({
     ...video,
