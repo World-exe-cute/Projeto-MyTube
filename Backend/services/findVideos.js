@@ -212,7 +212,7 @@ async function findVideos(
               $add: [
                 {
                   $multiply: [
-                    5,
+                    7,
                     {
                       $size: {
                         $filter: {
@@ -257,7 +257,7 @@ async function findVideos(
                 },
                 {
                   $multiply: [
-                    10,
+                    15,
                     {
                       $size: {
                         $filter: {
